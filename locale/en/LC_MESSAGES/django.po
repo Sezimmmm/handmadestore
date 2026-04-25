@@ -1,0 +1,551 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-26 00:31+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Kyrgyz"
+msgstr ""
+
+msgid "Russian"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Our workshop"
+msgstr ""
+
+msgid "Handmade accessories with care for detail"
+msgstr ""
+
+msgid ""
+"Maison Artisan is a small team in Bishkek. We work with leather and metal, "
+"offer personalization, and ship across Kyrgyzstan."
+msgstr ""
+
+msgid "Values"
+msgstr ""
+
+msgid "Handwork"
+msgstr ""
+
+msgid ""
+"Each piece is assembled and finished by hand — no mass production lines."
+msgstr ""
+
+msgid "Quality"
+msgstr ""
+
+msgid ""
+"We check materials and every order before shipping. We are honest about "
+"timing and care."
+msgstr ""
+
+msgid "Personalization"
+msgstr ""
+
+msgid ""
+"Choose color, engraving, and details where the product allows — we guide you "
+"through the process."
+msgstr ""
+
+msgid "Browse catalog"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgid "Account"
+msgstr ""
+
+msgid "My account"
+msgstr ""
+
+msgid ""
+"This section is under construction. You can place orders via the cart and "
+"checkout without signing in."
+msgstr ""
+
+msgid "Cart"
+msgstr ""
+
+msgid "Catalog"
+msgstr ""
+
+msgid "Contacts"
+msgstr ""
+
+msgid "Clear cart"
+msgstr ""
+
+msgid "Back to catalog"
+msgstr ""
+
+msgid "KGS"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Order total"
+msgstr ""
+
+msgid "Items"
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Checkout"
+msgstr ""
+
+msgid "Your cart is empty"
+msgstr ""
+
+msgid "Full assortment"
+msgstr ""
+
+msgid "of products"
+msgstr ""
+
+#, python-format
+msgid "%(n)s handmade pieces · Personalization on everything"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "All products"
+msgstr ""
+
+msgid "Price (KGS)"
+msgstr ""
+
+msgid "From"
+msgstr ""
+
+msgid "To"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+msgid "Selected colors"
+msgstr ""
+
+msgid "Material"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Engraving"
+msgstr ""
+
+msgid "Gift packaging"
+msgstr ""
+
+msgid "Hits only"
+msgstr ""
+
+msgid "Reset filters"
+msgstr ""
+
+msgid "Found"
+msgstr ""
+
+msgid "product(s)"
+msgstr ""
+
+msgid "No filters"
+msgstr ""
+
+msgid "Search by name"
+msgstr ""
+
+msgid "Sort: popularity"
+msgstr ""
+
+msgid "Sort: price low"
+msgstr ""
+
+msgid "Sort: price high"
+msgstr ""
+
+msgid "Sort: newest"
+msgstr ""
+
+msgid "Sort: rating"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Photo"
+msgstr ""
+
+msgid "HIT"
+msgstr ""
+
+msgid "NEW"
+msgstr ""
+
+msgid "SALE"
+msgstr ""
+
+msgid "Material to be confirmed"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+msgid "Add to cart"
+msgstr ""
+
+msgid "No products in the catalog yet"
+msgstr ""
+
+msgid "Add products in the admin: /admin"
+msgstr ""
+
+#, python-format
+msgid "Page %(num)s of %(total)s"
+msgstr ""
+
+msgid "Back to cart"
+msgstr ""
+
+msgid "pcs."
+msgstr ""
+
+msgid "Customer details"
+msgstr ""
+
+msgid "Full name"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Delivery address"
+msgstr ""
+
+msgid "Order comment"
+msgstr ""
+
+msgid "Confirm order"
+msgstr ""
+
+msgid "Cart is empty — nothing to checkout."
+msgstr ""
+
+msgid "Order placed"
+msgstr ""
+
+msgid "Thank you! Your order has been received."
+msgstr ""
+
+msgid "We will contact you to confirm."
+msgstr ""
+
+msgid "We are always in touch"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "us"
+msgstr ""
+
+msgid ""
+"Questions about an order, personalization, or getting to know our workshop — "
+"write, call, or visit."
+msgstr ""
+
+msgid "Mon–Sat, 10:00–19:00"
+msgstr ""
+
+msgid "We reply within one business day"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Write to us"
+msgstr ""
+
+msgid "Feedback form line1"
+msgstr ""
+
+msgid "Feedback form emphasis"
+msgstr ""
+
+msgid "Maison Artisan — handmade accessories"
+msgstr ""
+
+msgid "Handmade · Premium quality"
+msgstr ""
+
+msgid "Accessories,"
+msgstr ""
+
+msgid "crafted"
+msgstr ""
+
+msgid "with soul"
+msgstr ""
+
+msgid "Every piece tells a story."
+msgstr ""
+
+msgid "Personalize, choose, get inspired."
+msgstr ""
+
+msgid "Create your own"
+msgstr ""
+
+msgid "Product photo"
+msgstr ""
+
+msgid "Handmade"
+msgstr ""
+
+msgid "Every piece is unique"
+msgstr ""
+
+msgid "Name, color, material"
+msgstr ""
+
+msgid "Fast delivery"
+msgstr ""
+
+msgid "Across the country"
+msgstr ""
+
+msgid "Quality guarantee"
+msgstr ""
+
+msgid "30-day returns"
+msgstr ""
+
+msgid "Assortment"
+msgstr ""
+
+msgid "Categories heading"
+msgstr ""
+
+msgid "of goods"
+msgstr ""
+
+msgid "All categories"
+msgstr ""
+
+msgid "models"
+msgstr ""
+
+msgid "Open products"
+msgstr ""
+
+msgid "Popular"
+msgstr ""
+
+msgid "Our"
+msgstr ""
+
+msgid "hits"
+msgstr ""
+
+msgid "See all"
+msgstr ""
+
+msgid "Bestsellers"
+msgstr ""
+
+msgid "New arrivals"
+msgstr ""
+
+msgid "Promotions"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Unique feature"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "your own"
+msgstr ""
+
+msgid "accessory"
+msgstr ""
+
+msgid "Personalize color, material, and engraving — right on the site."
+msgstr ""
+
+msgid "Color and material choice"
+msgstr ""
+
+msgid "Add name or initials"
+msgstr ""
+
+msgid "Preview before checkout"
+msgstr ""
+
+msgid "Open builder"
+msgstr ""
+
+msgid "Builder"
+msgstr ""
+
+msgid "Pick a color:"
+msgstr ""
+
+msgid "Simple and fast"
+msgstr ""
+
+msgid "How it"
+msgstr ""
+
+msgid "works"
+msgstr ""
+
+msgid "Pick a product"
+msgstr ""
+
+msgid "Browse the catalog and find the right accessory."
+msgstr ""
+
+msgid "Make it yours"
+msgstr ""
+
+msgid "Choose color and material, add engraving."
+msgstr ""
+
+msgid "Receive your order"
+msgstr ""
+
+msgid "Place an order and get a one-of-a-kind piece."
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Handmade accessories with personalization. Every piece is unique."
+msgstr ""
+
+msgid "Bags"
+msgstr ""
+
+msgid "Wallets"
+msgstr ""
+
+msgid "Jewelry"
+msgstr ""
+
+msgid "Belts"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Delivery"
+msgstr ""
+
+msgid "Returns"
+msgstr ""
+
+msgid "Payment"
+msgstr ""
+
+msgid "Company"
+msgstr ""
+
+msgid "Craftsmen"
+msgstr ""
+
+msgid "Blog"
+msgstr ""
+
+msgid "© 2025 Maison Artisan. All rights reserved."
+msgstr ""
+
+msgid "Main navigation"
+msgstr ""
+
+msgid ""
+"Description will appear soon. The item is already available for "
+"personalization and order."
+msgstr ""
+
+msgid "Reviews"
+msgstr ""
+
+msgid "Product color"
+msgstr ""
+
+msgid "Related products"
+msgstr ""
+
+msgid "No related products yet."
+msgstr ""
+
+#, python-format
+msgid "Category: %(name)s"
+msgstr ""
+
+#, python-format
+msgid "Min price: %(value)s"
+msgstr ""
+
+#, python-format
+msgid "Max price: %(value)s"
+msgstr ""
+
+#, python-format
+msgid "Material: %(name)s"
+msgstr ""
+
+#, python-format
+msgid "Color: %(name)s"
+msgstr ""
+
+msgid "Go to cart"
+msgstr ""
+
+msgid "Continue shopping"
+msgstr ""
+
+#, python-format
+msgid "Fitting: %(name)s"
+msgstr ""
+
+#, python-format
+msgid "Engraving: %(text)s"
+msgstr ""

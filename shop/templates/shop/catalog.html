@@ -1,0 +1,258 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% trans "Catalog" %} — Maison Artisan</title>
+<link rel="icon" type="image/svg+xml" href="{% static 'shop/favicon.svg' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/css/catalog.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/common.css' %}">
+</head>
+<body>
+<div class="page-container">
+
+  
+  <div class="site-header">
+    <a class="logo-wrap" href="{% url 'home' %}">
+      <div class="logo-square">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="logo-title">Maison Artisan</span>
+    </a>
+    {% include "shop/partials/site_nav.html" with active_nav="catalog" %}
+    {% include "shop/partials/header_actions.html" %}
+  </div>
+
+  
+  <div class="breadcrumb-bar">
+    <a class="breadcrumb-link" href="{% url 'home' %}">{% trans "Home" %}</a>
+    <span class="breadcrumb-separator">›</span>
+    <span class="breadcrumb-link is-current">{% trans "Catalog" %}</span>
+  </div>
+
+  
+  <div class="cat-hero">
+    <div class="cat-hero-bg"></div>
+    <div class="cat-hero-left">
+      <div class="ch-tag">● {% trans "Full assortment" %}</div>
+      <div class="ch-h">{% trans "Catalog" %} <em>{% trans "of products" %}</em></div>
+      <div class="ch-sub">{% blocktrans with n=total_products_count %}{{ n }} handmade pieces · Personalization on everything{% endblocktrans %}</div>
+    </div>
+  </div>
+
+  
+  <div class="cat-body">
+
+    
+    <form class="sidebar" id="catalogFilterForm" method="get" action="{% url 'catalog' %}">
+
+      
+      <div class="sidebar-section">
+        <div class="sidebar-title">{% trans "Categories" %} <span class="sidebar-arrow">▾</span></div>
+        <div class="cat-list">
+          <label class="cat-item {% if not selected_category %}on{% endif %}">
+            <div class="cat-item-left"><div class="cat-dot" style="background:var(--tiramisu);"></div><span class="cat-lbl">{% trans "All products" %}</span></div>
+            <span class="cat-count">{{ total_products_count }}</span>
+            <input type="radio" name="category" value="" {% if not selected_category %}checked{% endif %}>
+          </label>
+          {% for category in categories_with_counts %}
+          <label class="cat-item {% if selected_category == category.slug %}on{% endif %}">
+            <div class="cat-item-left"><div class="cat-dot" style="background:#6B3A2A;"></div><span class="cat-lbl">{{ category.name }}</span></div>
+            <span class="cat-count">{{ category.count }}</span>
+            <input type="radio" name="category" value="{{ category.slug }}" {% if selected_category == category.slug %}checked{% endif %}>
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      
+      <div class="sidebar-section">
+        <div class="sidebar-title">{% trans "Price (KGS)" %} <span class="sidebar-arrow">▾</span></div>
+        <div class="price-range">
+          <div class="price-row-inputs">
+            <input class="price-input" type="number" name="min_price" value="{{ min_price }}" placeholder="{% trans 'From' %}">
+            <span class="price-separator">—</span>
+            <input class="price-input" type="number" name="max_price" value="{{ max_price }}" placeholder="{% trans 'To' %}">
+          </div>
+          <button type="submit" class="price-apply-button">{% trans "Apply" %}</button>
+        </div>
+      </div>
+
+      
+      <div class="sidebar-section">
+        <div class="sidebar-title">{% trans "Color" %} <span class="sidebar-arrow">▾</span></div>
+        <div class="color-opts">
+          {% for color in color_choices %}
+          <label class="color-option-label" title="{{ color.name }}">
+            <input type="checkbox" name="color" value="{{ color.hex }}" {% if color.hex in selected_colors %}checked{% endif %}>
+            <span class="color-option" style="background:{{ color.hex }};"></span>
+            <span class="color-option-sr">{{ color.name }}</span>
+          </label>
+          {% endfor %}
+        </div>
+        <div class="color-selected-label">{% trans "Selected colors" %}: {{ selected_colors|length }}</div>
+      </div>
+
+      
+      <div class="sidebar-section">
+        <div class="sidebar-title">{% trans "Material" %} <span class="sidebar-arrow">▾</span></div>
+        <div class="mat-list">
+          {% for material in material_choices %}
+          <label class="mat-item">
+            <input type="checkbox" name="material" value="{{ material }}" {% if material in selected_materials %}checked{% endif %}>
+            <span class="mat-lbl">{{ material }}</span>
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      
+      <div class="sidebar-section">
+        <div class="sidebar-title">{% trans "Options" %} <span class="sidebar-arrow">▾</span></div>
+        <div class="mat-list">
+          <label class="mat-item"><input type="checkbox" name="only_personalizable" value="1" {% if only_personalizable %}checked{% endif %}><span class="mat-lbl">{% trans "Personalization" %}</span></label>
+          <label class="mat-item"><input type="checkbox" name="only_engraving" value="1" {% if only_engraving %}checked{% endif %}><span class="mat-lbl">{% trans "Engraving" %}</span></label>
+          <label class="mat-item"><input type="checkbox" name="only_gift_wrap" value="1" {% if only_gift_wrap %}checked{% endif %}><span class="mat-lbl">{% trans "Gift packaging" %}</span></label>
+          <label class="mat-item"><input type="checkbox" name="only_hits" value="1" {% if only_hits %}checked{% endif %}><span class="mat-lbl">{% trans "Hits only" %}</span></label>
+        </div>
+      </div>
+
+      
+      <div class="clear-filters">
+        <a class="cf-btn" href="{% url 'catalog' %}">{% trans "Reset filters" %}</a>
+      </div>
+    </form>
+
+    
+    <div class="grid-area">
+
+      
+      <div class="toolbar">
+        <div class="tb-left">
+          <div class="tb-found">{% trans "Found" %}: <strong>{{ products_count }} {% trans "product(s)" %}</strong></div>
+          <a class="active-filter-chip" href="{% url 'cart_detail' %}">{% trans "Cart" %}: {{ cart_count }}</a>
+          <a class="active-filter-chip" href="{% url 'cart_clear' %}?next={% url 'catalog' %}">{% trans "Clear cart" %}</a>
+          <a class="active-filter-chip" href="{% url 'checkout' %}">{% trans "Checkout" %}</a>
+          <div class="active-filters">
+            {% for filter_item in active_filters %}
+            <a class="active-filter-chip" href="{{ filter_item.remove_url }}">{{ filter_item.label }} <span class="active-filter-remove">×</span></a>
+            {% empty %}
+            <span class="active-filter-chip">{% trans "No filters" %}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tb-right">
+          <form method="get" id="catalogSortForm">
+            <input type="hidden" name="category" value="{{ selected_category }}">
+            {% for material in selected_materials %}<input type="hidden" name="material" value="{{ material }}">{% endfor %}
+            {% for color in selected_colors %}<input type="hidden" name="color" value="{{ color }}">{% endfor %}
+            {% if min_price %}<input type="hidden" name="min_price" value="{{ min_price }}">{% endif %}
+            {% if max_price %}<input type="hidden" name="max_price" value="{{ max_price }}">{% endif %}
+            {% if only_personalizable %}<input type="hidden" name="only_personalizable" value="1">{% endif %}
+            {% if only_engraving %}<input type="hidden" name="only_engraving" value="1">{% endif %}
+            {% if only_gift_wrap %}<input type="hidden" name="only_gift_wrap" value="1">{% endif %}
+            {% if only_hits %}<input type="hidden" name="only_hits" value="1">{% endif %}
+          <input id="catalog-search" class="sort-sel" type="text" name="q" value="{{ search_query }}" placeholder="{% trans 'Search by name' %}">
+          <select class="sort-sel" name="sort">
+            <option value="popular" {% if selected_sort == 'popular' %}selected{% endif %}>{% trans "Sort: popularity" %}</option>
+            <option value="cheap" {% if selected_sort == 'cheap' %}selected{% endif %}>{% trans "Sort: price low" %}</option>
+            <option value="expensive" {% if selected_sort == 'expensive' %}selected{% endif %}>{% trans "Sort: price high" %}</option>
+            <option value="newest" {% if selected_sort == 'newest' %}selected{% endif %}>{% trans "Sort: newest" %}</option>
+            <option value="rating" {% if selected_sort == 'rating' %}selected{% endif %}>{% trans "Sort: rating" %}</option>
+          </select>
+          <button class="sort-sel" type="submit">{% trans "Search" %}</button>
+          </form>
+        </div>
+      </div>
+
+      
+      <div class="prod-grid" id="prodGrid">
+        {% for product in products %}
+        <div class="product-card">
+          <div class="product-image-area {{ product.card_color_class }}">
+            <div class="pi-ph"><div class="pi-ph-box"></div><div class="pi-ph-lbl">{% trans "Photo" %}</div></div>
+            {% if product.badge != "none" %}
+            <div class="pi-badge {% if product.badge == 'hit' %}badge-hit{% elif product.badge == 'new' %}badge-new{% else %}badge-sale{% endif %}">
+              {% if product.badge_text %}{{ product.badge_text }}{% elif product.badge == 'hit' %}{% trans "HIT" %}{% elif product.badge == 'new' %}{% trans "NEW" %}{% else %}{% trans "SALE" %}{% endif %}
+            </div>
+            {% endif %}
+            <div class="pi-actions">
+              <div class="product-action-button"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+              <div class="product-action-button"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">{{ product.category.name }}</div>
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-colors">
+              {% for variant in product.variants.all %}
+              <div class="pc-dot {% if variant.is_default %}sel{% endif %}" style="background:{{ variant.color_hex }};"></div>
+              {% empty %}
+              <div class="pc-dot sel" style="background:#C8AA8A;"></div>
+              {% endfor %}
+            </div>
+            <div class="product-material">{% if product.material %}{{ product.material }}{% else %}{% trans "Material to be confirmed" %}{% endif %}</div>
+            <div class="prating">
+              <svg class="star-s" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="star-s" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="star-s" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="star-s" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg class="star-s" viewBox="0 0 24 24" fill="#DDD0C0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span class="prating-count">({{ product.reviews_count }})</span>
+            </div>
+            <div class="pprice-row">
+              <span class="pprice">{{ product.price }} сом</span>
+              {% if product.old_price %}<span class="pprice-old">{{ product.old_price }} сом</span>{% endif %}
+            </div>
+            <a class="product-button" href="{% url 'product_detail' product.slug %}">{% trans "Details" %}</a>
+            <a class="product-button pbtn-outline" href="{% url 'cart_add' product.slug %}?next={% url 'catalog' %}">{% trans "Add to cart" %}</a>
+          </div>
+        </div>
+        {% empty %}
+        <div class="product-card">
+          <div class="product-info">
+            <div class="product-name">{% trans "No products in the catalog yet" %}</div>
+            <div class="product-material">{% trans "Add products in the admin: /admin" %}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      
+      <div class="pagination">
+        <div class="pg-info">{% blocktrans with num=page_obj.number total=page_obj.paginator.num_pages %}Page {{ num }} of {{ total }}{% endblocktrans %}</div>
+        <div class="pg-btns">
+          {% if page_obj.has_previous %}
+            <a class="pagination-button arrow" href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.previous_page_number }}">‹</a>
+          {% else %}
+            <span class="pagination-button arrow">‹</span>
+          {% endif %}
+          {% for page_num in page_obj.paginator.page_range %}
+            {% if page_num == page_obj.number %}
+              <span class="pagination-button on">{{ page_num }}</span>
+            {% else %}
+              <a class="pagination-button" href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_num }}">{{ page_num }}</a>
+            {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+            <a class="pagination-button arrow" href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.next_page_number }}">›</a>
+          {% else %}
+            <span class="pagination-button arrow">›</span>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+  {% include "shop/partials/site_footer.html" %}
+
+</div>
+  <script src="{% static 'shop/js/catalog.js' %}"></script>
+</body>
+</html>

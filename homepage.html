@@ -1,0 +1,326 @@
+
+<style>
+/* Pantone palette:
+   Tiramisu     #6B3A2A  (dark brown)
+   Bleached Sand #C8AA8A  (warm tan)
+   Coconut Milk  #F0EBE0  (off-white cream)
+   Accent mid:   #A07850  (mid brown)
+   Text dark:    #2A1A10
+*/
+*{box-sizing:border-box;margin:0;padding:0;}
+.pg{width:100%;max-width:900px;margin:0 auto;border:1px solid #DDD0C0;border-radius:14px;overflow:hidden;font-family:var(--font-sans);}
+
+/* HEADER */
+.hdr{background:#F0EBE0;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #DDD0C0;}
+.logo-wrap{display:flex;align-items:center;gap:10px;}
+.logo-sq{width:30px;height:30px;border-radius:6px;background:#6B3A2A;display:flex;align-items:center;justify-content:center;}
+.logo-name{font-size:14px;font-weight:500;color:#2A1A10;font-family:var(--font-serif);}
+.nav{display:flex;gap:20px;}
+.nl{font-size:12px;color:#A07850;}
+.nl.on{color:#6B3A2A;font-weight:500;border-bottom:1.5px solid #6B3A2A;padding-bottom:2px;}
+.hdr-r{display:flex;align-items:center;gap:10px;}
+.lb{font-size:10px;color:#6B3A2A;border:1px solid #C8AA8A;border-radius:4px;padding:2px 7px;background:#F0EBE0;}
+.ic{width:28px;height:28px;border-radius:6px;border:1px solid #DDD0C0;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;}
+.bdg{position:absolute;top:-3px;right:-3px;width:13px;height:13px;border-radius:50%;background:#6B3A2A;font-size:8px;color:#F0EBE0;display:flex;align-items:center;justify-content:center;font-weight:600;}
+
+/* HERO */
+.hero{background:#F0EBE0;min-height:230px;display:flex;align-items:center;padding:42px 44px;position:relative;overflow:hidden;}
+.hero-r{position:absolute;right:0;top:0;width:43%;height:100%;background:#E8DFD0;}
+.hero-line{position:absolute;right:43%;top:0;width:2px;height:100%;background:#C8AA8A;}
+.hc{position:relative;z-index:1;max-width:52%;}
+.htag{display:inline-flex;align-items:center;gap:6px;background:#6B3A2A;color:#F0EBE0;font-size:10px;padding:4px 12px;border-radius:3px;margin-bottom:14px;letter-spacing:.04em;}
+.htag-dot{width:5px;height:5px;border-radius:50%;background:#C8AA8A;}
+.hh1{font-size:28px;font-weight:500;color:#2A1A10;line-height:1.26;margin-bottom:10px;font-family:var(--font-serif);}
+.hh1 em{color:#6B3A2A;font-style:normal;}
+.hsub{font-size:12px;color:#7A5A40;margin-bottom:22px;line-height:1.65;}
+.hero-btns{display:flex;gap:10px;}
+.bp{background:#6B3A2A;color:#F0EBE0;font-size:11px;font-weight:500;padding:10px 22px;border-radius:4px;letter-spacing:.03em;}
+.bo{border:1.5px solid #C8AA8A;color:#6B3A2A;font-size:11px;padding:10px 22px;border-radius:4px;}
+.himg{position:absolute;right:28px;top:50%;transform:translateY(-50%);width:35%;height:165px;background:#DDD0BC;border-radius:10px;border:1px solid #C8AA8A;display:flex;align-items:center;justify-content:center;}
+.himg-inner{text-align:center;}
+.himg-c{width:54px;height:54px;border-radius:6px;border:2px dashed #A07850;margin:0 auto 6px;}
+.himg-l{font-size:10px;color:#A07850;}
+
+/* pantone-style tag */
+.pantone-tag{position:absolute;bottom:12px;left:12px;background:#fff;border:1px solid #DDD0C0;border-radius:3px;padding:5px 8px;width:70px;}
+.p-swatch{width:100%;height:18px;border-radius:2px;margin-bottom:4px;}
+.p-brand{font-size:7px;font-weight:500;color:#2A1A10;letter-spacing:.08em;}
+.p-code{font-size:6px;color:#A07850;}
+.p-name{font-size:7px;font-weight:500;color:#2A1A10;}
+
+/* ADVANTAGES */
+.adv{background:#fff;padding:22px 28px;border-bottom:1px solid #DDD0C0;}
+.adv-g{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.adv-item{text-align:center;padding:14px 8px;background:#F0EBE0;border-radius:8px;border:1px solid #DDD0C0;}
+.adv-ic{width:36px;height:36px;border-radius:6px;background:#6B3A2A;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;}
+.adv-t{font-size:11px;font-weight:500;color:#2A1A10;}
+.adv-s{font-size:10px;color:#A07850;margin-top:2px;}
+
+/* CATEGORIES */
+.cats{padding:28px 28px;background:#F0EBE0;}
+.sec-tag{font-size:10px;color:#A07850;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+.sec-t{font-size:17px;font-weight:500;color:#2A1A10;font-family:var(--font-serif);}
+.sec-t em{color:#6B3A2A;font-style:normal;}
+.sec-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:16px;}
+.sa{font-size:11px;color:#6B3A2A;border-bottom:1px solid #C8AA8A;padding-bottom:1px;}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.cc{border-radius:8px;height:86px;display:flex;flex-direction:column;justify-content:space-between;padding:10px;overflow:hidden;border:1px solid transparent;}
+.cc-lbl{font-size:12px;font-weight:500;color:#F0EBE0;}
+.cc-sub{font-size:9px;color:rgba(240,235,224,.7);}
+.cc1{background:#6B3A2A;}.cc2{background:#8A5A3A;}.cc3{background:#A07850;}
+.cc4{background:#C8AA8A;}.cc5{background:#7A4A30;}.cc6{background:#B09070;}
+.cc4 .cc-lbl,.cc6 .cc-lbl{color:#2A1A10;}
+.cc4 .cc-sub,.cc6 .cc-sub{color:rgba(42,26,16,.6);}
+
+/* PRODUCTS */
+.prods{padding:28px 28px;background:#fff;}
+.tabs{display:flex;border-bottom:1px solid #DDD0C0;margin-bottom:16px;}
+.tab{font-size:12px;padding:7px 16px;color:#B09070;}
+.tab.on{color:#2A1A10;font-weight:500;border-bottom:2px solid #6B3A2A;}
+.pg4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.pc{border:1px solid #DDD0C0;border-radius:10px;overflow:hidden;background:#FAF7F3;}
+.pi{height:92px;display:flex;align-items:center;justify-content:center;position:relative;}
+.ph{position:absolute;top:7px;right:7px;width:22px;height:22px;border-radius:5px;background:#fff;border:1px solid #DDD0C0;display:flex;align-items:center;justify-content:center;}
+.pinfo{padding:10px;background:#fff;}
+.pn{font-size:11px;font-weight:500;color:#2A1A10;}
+.pp{font-size:12px;color:#6B3A2A;font-weight:500;margin-top:2px;}
+.pbtn{width:100%;background:#6B3A2A;color:#F0EBE0;font-size:10px;padding:6px;text-align:center;margin-top:7px;border-radius:4px;}
+.pi1{background:#E0C8A8;}.pi2{background:#D8C0A0;}.pi3{background:#E8D8C0;}.pi4{background:#D0B898;}
+
+/* PERS BANNER */
+.pb{background:#2A1A10;padding:34px 36px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;}
+.ptag{display:inline-block;background:#6B3A2A;color:#C8AA8A;font-size:10px;padding:3px 12px;border-radius:3px;margin-bottom:10px;letter-spacing:.04em;}
+.pt{font-size:22px;font-weight:500;color:#F0EBE0;line-height:1.3;margin-bottom:8px;font-family:var(--font-serif);}
+.pt em{color:#C8AA8A;font-style:normal;}
+.ps{font-size:11px;color:#8A6A50;margin-bottom:14px;line-height:1.6;}
+.pf{display:flex;align-items:center;gap:8px;font-size:11px;color:#8A6A50;margin-bottom:6px;}
+.fd{width:8px;height:8px;border-radius:2px;background:#C8AA8A;flex-shrink:0;}
+.cbox{background:#3A2418;border-radius:10px;padding:18px;border:1px solid #5A3020;}
+.clbl{font-size:10px;color:#8A6A50;margin-bottom:9px;letter-spacing:.04em;text-transform:uppercase;}
+.cprev{height:80px;background:#2A1A10;border-radius:7px;border:1px dashed #5A3020;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.cpbox{width:48px;height:48px;border-radius:6px;background:#C8AA8A;border:1.5px solid #E0C8A8;}
+.csub{font-size:10px;color:#8A6A50;margin-bottom:7px;}
+.copts{display:flex;gap:7px;}
+.co{width:18px;height:18px;border-radius:3px;}
+.co.sel{outline:2px solid #C8AA8A;outline-offset:2px;}
+
+/* HOW */
+.how{padding:32px 28px;background:#F0EBE0;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:20px;}
+.step{text-align:center;padding:16px 14px;position:relative;}
+.snum{width:40px;height:40px;border-radius:6px;background:#6B3A2A;color:#F0EBE0;font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-family:var(--font-serif);}
+.st{font-size:13px;font-weight:500;color:#2A1A10;margin-bottom:4px;}
+.ss{font-size:11px;color:#7A5A40;line-height:1.5;}
+.sarr{position:absolute;right:-7px;top:22px;}
+.sarr svg{width:16px;height:16px;stroke:#C8AA8A;stroke-width:2;fill:none;}
+
+/* REVIEWS */
+.revs{padding:28px 28px;background:#fff;}
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;}
+.rc{border:1px solid #DDD0C0;border-radius:10px;padding:15px;background:#FAF7F3;}
+.rh{display:flex;align-items:center;gap:9px;margin-bottom:9px;}
+.rav{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;font-family:var(--font-serif);}
+.rn{font-size:12px;font-weight:500;color:#2A1A10;}
+.rs{display:flex;gap:2px;margin-top:2px;}
+.star{width:9px;height:9px;}
+.rt{font-size:11px;color:#7A5A40;line-height:1.5;}
+
+/* GALLERY */
+.gal{padding:28px 28px;background:#F0EBE0;}
+.gg{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px;}
+.gi{height:86px;border-radius:8px;position:relative;overflow:hidden;}
+.gi-label{position:absolute;bottom:7px;left:7px;font-size:9px;color:#F0EBE0;background:rgba(42,26,16,.45);padding:2px 7px;border-radius:3px;}
+.g1{background:#C8AA8A;}.g2{background:#B09070;}.g3{background:#A07850;}
+.g4{background:#D8C8A8;}.g5{background:#8A6040;}.g6{background:#C0A880;}
+
+/* FOOTER */
+.ftr{background:#2A1A10;padding:30px 28px;}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:20px;margin-bottom:18px;}
+.fl{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.fd2{font-size:11px;color:#5A3A28;line-height:1.6;margin-bottom:13px;}
+.soc{display:flex;gap:7px;}
+.sb{width:28px;height:28px;border-radius:5px;border:1px solid #3A2418;background:#3A2418;display:flex;align-items:center;justify-content:center;}
+.fct{font-size:12px;font-weight:500;color:#C8AA8A;margin-bottom:9px;font-family:var(--font-serif);}
+.flnk{font-size:11px;color:#5A3A28;display:block;margin-bottom:5px;}
+.fbot{border-top:1px solid #3A2418;padding-top:14px;display:flex;align-items:center;justify-content:space-between;}
+.fcp{font-size:10px;color:#3A2418;}
+.fls{display:flex;gap:6px;}
+.flb{font-size:10px;color:#5A3A28;border:1px solid #3A2418;border-radius:3px;padding:2px 7px;}
+.flb.on{color:#C8AA8A;border-color:#C8AA8A;}
+</style>
+
+<div class="pg">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="logo-wrap">
+      <div class="logo-sq">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="logo-name">Maison Artisan</span>
+    </div>
+    <div class="nav">
+      <span class="nl on">Главная</span>
+      <span class="nl">Каталог</span>
+      <span class="nl">Персонализация</span>
+      <span class="nl">О нас</span>
+      <span class="nl">Контакты</span>
+    </div>
+    <div class="hdr-r">
+      <span class="lb">RU ▾</span>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><div class="bdg">2</div></div>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20 21v-2a a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-r"></div>
+    <div class="hero-line"></div>
+    <div class="hc">
+      <div class="htag"><div class="htag-dot"></div>Ручная работа · Премиум качество</div>
+      <div class="hh1">Аксессуары,<br><em>созданные</em> с душой</div>
+      <div class="hsub">Каждое изделие — отдельная история.<br>Персонализируй, выбирай, вдохновляй.</div>
+      <div class="hero-btns">
+        <div class="bp">Смотреть каталог</div>
+        <div class="bo">Создать свой</div>
+      </div>
+    </div>
+    <div class="himg">
+      <div class="himg-inner">
+        <div class="himg-c"></div>
+        <div class="himg-l">Фото товара</div>
+      </div>
+      <!-- Pantone tag decoration -->
+      <div class="pantone-tag">
+        <div class="p-swatch" style="background:#6B3A2A;"></div>
+        <div class="p-brand">PANTONE®</div>
+        <div class="p-code">19-1233 TCX</div>
+        <div class="p-name">Tiramisu</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADVANTAGES -->
+  <div class="adv">
+    <div class="adv-g">
+      <div class="adv-item"><div class="adv-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M18 11V6a2 2 0 00-2-2v0a2 2 0 00-2 2v0"/><path d="M14 10V4a2 2 0 00-2-2v0a2 2 0 00-2 2v2"/><path d="M10 10.5V6a2 2 0 00-2-2v0a2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 114 0v6a8 8 0 01-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 012.83-2.82L7 15"/></svg></div><div class="adv-t">Ручная работа</div><div class="adv-s">Каждое изделие уникально</div></div>
+      <div class="adv-item"><div class="adv-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="adv-t">Персонализация</div><div class="adv-s">Имя, цвет, материал</div></div>
+      <div class="adv-item"><div class="adv-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="adv-t">Быстрая доставка</div><div class="adv-s">По всей стране</div></div>
+      <div class="adv-item"><div class="adv-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="adv-t">Гарантия качества</div><div class="adv-s">30 дней на возврат</div></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="cats">
+    <div class="sec-hdr">
+      <div><div class="sec-tag">Ассортимент</div><div class="sec-t">Категории <em>товаров</em></div></div>
+      <span class="sa">Все категории →</span>
+    </div>
+    <div class="cg">
+      <div class="cc cc1"><span class="cc-lbl">Сумки</span><span class="cc-sub">12 моделей</span></div>
+      <div class="cc cc2"><span class="cc-lbl">Кошельки</span><span class="cc-sub">8 моделей</span></div>
+      <div class="cc cc3"><span class="cc-lbl">Украшения</span><span class="cc-sub">20 моделей</span></div>
+      <div class="cc cc4"><span class="cc-lbl">Ремни</span><span class="cc-sub">6 моделей</span></div>
+      <div class="cc cc5"><span class="cc-lbl">Браслеты</span><span class="cc-sub">15 моделей</span></div>
+      <div class="cc cc6"><span class="cc-lbl">Брелоки</span><span class="cc-sub">9 моделей</span></div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="prods">
+    <div class="sec-hdr"><div><div class="sec-tag">Популярное</div><div class="sec-t">Наши <em>хиты</em></div></div><span class="sa">Смотреть все →</span></div>
+    <div class="tabs"><span class="tab on">Хиты продаж</span><span class="tab">Новинки</span><span class="tab">Акции</span></div>
+    <div class="pg4">
+      <div class="pc"><div class="pi pi1"><div class="ph"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><div class="pinfo"><div class="pn">Сумка кожаная</div><div class="pp">4 900 сом</div><div class="pbtn">В корзину</div></div></div>
+      <div class="pc"><div class="pi pi2"><div class="ph"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><div class="pinfo"><div class="pn">Кошелёк с гравировкой</div><div class="pp">1 800 сом</div><div class="pbtn">В корзину</div></div></div>
+      <div class="pc"><div class="pi pi3"><div class="ph"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><div class="pinfo"><div class="pn">Браслет плетёный</div><div class="pp">950 сом</div><div class="pbtn">В корзину</div></div></div>
+      <div class="pc"><div class="pi pi4"><div class="ph"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><div class="pinfo"><div class="pn">Ремень ручной работы</div><div class="pp">2 400 сом</div><div class="pbtn">В корзину</div></div></div>
+    </div>
+  </div>
+
+  <!-- PERS BANNER -->
+  <div class="pb">
+    <div>
+      <div class="ptag">Уникальная фишка</div>
+      <div class="pt">Создай <em>свой</em><br>аксессуар</div>
+      <div class="ps">Персонализируй цвет, материал, гравировку — прямо на сайте</div>
+      <div class="pf"><div class="fd"></div>Выбор цвета и материала</div>
+      <div class="pf"><div class="fd"></div>Добавление имени / инициалов</div>
+      <div class="pf" style="margin-bottom:18px;"><div class="fd"></div>Превью до оформления заказа</div>
+      <div class="bp" style="display:inline-block;">Открыть конструктор</div>
+    </div>
+    <div class="cbox">
+      <div class="clbl">Конструктор</div>
+      <div class="cprev"><div class="cpbox"></div></div>
+      <div class="csub">Выбери цвет:</div>
+      <div class="copts">
+        <div class="co sel" style="background:#C8AA8A;"></div>
+        <div class="co" style="background:#6B3A2A;"></div>
+        <div class="co" style="background:#F0EBE0;border:1px solid #C8AA8A;"></div>
+        <div class="co" style="background:#3A2A50;"></div>
+        <div class="co" style="background:#2A4A30;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW -->
+  <div class="how">
+    <div style="text-align:center;"><div class="sec-tag">Просто и быстро</div><div class="sec-t">Как это <em>работает</em></div></div>
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><div class="st">Выбери товар</div><div class="ss">Просмотри каталог и найди подходящий аксессуар</div><div class="sarr"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div>
+      <div class="step"><div class="snum">2</div><div class="st">Настрой под себя</div><div class="ss">Выбери цвет, материал, добавь гравировку</div><div class="sarr"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div>
+      <div class="step"><div class="snum">3</div><div class="st">Получи заказ</div><div class="ss">Оформи заказ и получи уникальное изделие</div></div>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="revs">
+    <div class="sec-hdr"><div><div class="sec-tag">Отзывы</div><div class="sec-t">Что говорят <em>покупатели</em></div></div></div>
+    <div class="rg">
+      <div class="rc"><div class="rh"><div class="rav" style="background:#E0C8A8;color:#6B3A2A;">АС</div><div><div class="rn">Айгуль С.</div><div class="rs"><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div></div><div class="rt">Заказала сумку с гравировкой — получилось восхитительно. Качество на высоте!</div></div>
+      <div class="rc"><div class="rh"><div class="rav" style="background:#D8C0A0;color:#5A3020;">КМ</div><div><div class="rn">Кирилл М.</div><div class="rs"><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#DDD0C0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div></div><div class="rt">Конструктор очень удобный, подобрал цвет и материал за пару минут. Быстрая доставка.</div></div>
+      <div class="rc"><div class="rh"><div class="rav" style="background:#C8B090;color:#4A2810;">ЗА</div><div><div class="rn">Зарина А.</div><div class="rs"><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg class="star" viewBox="0 0 24 24" fill="#6B3A2A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div></div><div class="rt">Подарила подруге браслет с именем — она была в восторге. Буду заказывать ещё!</div></div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="gal">
+    <div class="sec-hdr"><div><div class="sec-tag">Lookbook</div><div class="sec-t">Наши <em>работы</em></div></div><span class="sa">Смотреть все →</span></div>
+    <div class="gg">
+      <div class="gi g1"><div class="gi-label">Сумки</div></div>
+      <div class="gi g2"><div class="gi-label">Ремни</div></div>
+      <div class="gi g3"><div class="gi-label">Браслеты</div></div>
+      <div class="gi g4"><div class="gi-label">Кошельки</div></div>
+      <div class="gi g5"><div class="gi-label">Украшения</div></div>
+      <div class="gi g6"><div class="gi-label">Брелоки</div></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ftr">
+    <div class="fg">
+      <div>
+        <div class="fl">
+          <div class="logo-sq"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+          <span style="font-size:13px;font-weight:500;color:#C8AA8A;font-family:var(--font-serif);">Maison Artisan</span>
+        </div>
+        <div class="fd2">Брендовые аксессуары ручной работы с персонализацией. Каждое изделие уникально.</div>
+        <div class="soc">
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47a2.78 2.78 0 00-1.95 1.95A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.5C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></div>
+        </div>
+      </div>
+      <div><div class="fct">Каталог</div><span class="flnk">Сумки</span><span class="flnk">Кошельки</span><span class="flnk">Украшения</span><span class="flnk">Ремни</span></div>
+      <div><div class="fct">Помощь</div><span class="flnk">Доставка</span><span class="flnk">Возврат</span><span class="flnk">Оплата</span><span class="flnk">FAQ</span></div>
+      <div><div class="fct">Компания</div><span class="flnk">О нас</span><span class="flnk">Мастера</span><span class="flnk">Блог</span><span class="flnk">Контакты</span></div>
+    </div>
+    <div class="fbot">
+      <div class="fcp">© 2025 Maison Artisan. Все права защищены.</div>
+      <div class="fls"><span class="flb on">RU</span><span class="flb">EN</span><span class="flb">KG</span></div>
+    </div>
+  </div>
+
+</div>

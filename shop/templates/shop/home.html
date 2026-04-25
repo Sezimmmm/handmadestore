@@ -1,0 +1,135 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% trans "Maison Artisan — handmade accessories" %}</title>
+<link rel="icon" type="image/svg+xml" href="{% static 'shop/favicon.svg' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/common.css' %}">
+</head>
+<body>
+<div class="page-container">
+
+  
+  <div class="site-header">
+    <a class="logo-wrap" href="{% url 'home' %}">
+      <div class="logo-square">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="logo-title">Maison Artisan</span>
+    </a>
+    {% include "shop/partials/site_nav.html" with active_nav="home" %}
+    {% include "shop/partials/header_actions.html" %}
+  </div>
+
+  
+  <div class="hero">
+    <div class="hero-r"></div>
+    <div class="hero-line"></div>
+    <div class="hc">
+      <div class="htag"><div class="htag-dot"></div>{% trans "Handmade · Premium quality" %}</div>
+      <div class="hh1">{% trans "Accessories," %}<br><em>{% trans "crafted" %}</em> {% trans "with soul" %}</div>
+      <div class="hsub">{% trans "Every piece tells a story." %}<br>{% trans "Personalize, choose, get inspired." %}</div>
+      <div class="hero-btns">
+        <a class="bp" href="{% url 'catalog' %}">{% trans "Browse catalog" %}</a>
+        <a class="bo" href="{% url 'personalization' %}">{% trans "Create your own" %}</a>
+      </div>
+    </div>
+    <div class="himg">
+      <div class="himg-inner">
+        <div class="himg-c"></div>
+        <div class="himg-l">{% trans "Product photo" %}</div>
+      </div>
+      
+      <div class="pantone-tag">
+        <div class="p-swatch" style="background:#6B3A2A;"></div>
+        <div class="p-brand">PANTONE®</div>
+        <div class="p-code">19-1233 TCX</div>
+        <div class="p-name">Tiramisu</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="adv">
+    <div class="adv-g">
+      <div class="adv-item"><div class="adv-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M18 11V6a2 2 0 00-2-2v0a2 2 0 00-2 2v0"/><path d="M14 10V4a2 2 0 00-2-2v0a2 2 0 00-2 2v2"/><path d="M10 10.5V6a2 2 0 00-2-2v0a2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 114 0v6a8 8 0 01-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 012.83-2.82L7 15"/></svg></div><div class="adv-t">{% trans "Handmade" %}</div><div class="adv-s">{% trans "Every piece is unique" %}</div></div>
+      <div class="adv-item"><div class="adv-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="adv-t">{% trans "Personalization" %}</div><div class="adv-s">{% trans "Name, color, material" %}</div></div>
+      <div class="adv-item"><div class="adv-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div class="adv-t">{% trans "Fast delivery" %}</div><div class="adv-s">{% trans "Across the country" %}</div></div>
+      <div class="adv-item"><div class="adv-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="adv-t">{% trans "Quality guarantee" %}</div><div class="adv-s">{% trans "30-day returns" %}</div></div>
+    </div>
+  </div>
+
+  
+  <div class="cats">
+    <div class="sec-hdr">
+      <div><div class="sec-tag">{% trans "Assortment" %}</div><div class="sec-t">{% trans "Categories heading" %} <em>{% trans "of goods" %}</em></div></div>
+      <a class="sa" href="{% url 'catalog' %}">{% trans "All categories" %} →</a>
+    </div>
+    <div class="cg">
+      {% for item in home_categories %}
+      <a class="cc cc{{ forloop.counter }}" href="{% url 'catalog' %}?category={{ item.slug }}">
+        <span class="cc-lbl">{% if item.name == "Брелоки" %}Брелки{% else %}{{ item.name }}{% endif %}</span>
+        <span class="cc-sub">{{ item.count }} {% trans "models" %}</span>
+      </a>
+      {% empty %}
+      <a class="cc cc1" href="{% url 'catalog' %}"><span class="cc-lbl">{% trans "Catalog" %}</span><span class="cc-sub">{% trans "Open products" %}</span></a>
+      {% endfor %}
+    </div>
+  </div>
+
+  
+  <div class="prods">
+    <div class="sec-hdr"><div><div class="sec-tag">{% trans "Popular" %}</div><div class="sec-t">{% trans "Our" %} <em>{% trans "hits" %}</em></div></div><a class="sa" href="{% url 'catalog' %}?sort=popular">{% trans "See all" %} →</a></div>
+    <div class="tabs"><span class="tab on">{% trans "Bestsellers" %}</span><span class="tab">{% trans "New arrivals" %}</span><span class="tab">{% trans "Promotions" %}</span></div>
+    <div class="pg4">
+      <a class="product-card product-card-link" href="{% url 'catalog' %}?q=Сумка"><div class="product-image-area pi1"><div class="ph"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><div class="product-info"><div class="pn">Сумка кожаная</div><div class="pp">4 900 сом</div><div class="product-button">{% trans "View" %}</div></div></a>
+      <a class="product-card product-card-link" href="{% url 'catalog' %}?q=Кошелёк"><div class="product-image-area pi2"><div class="ph"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><div class="product-info"><div class="pn">Кошелёк с гравировкой</div><div class="pp">1 800 сом</div><div class="product-button">{% trans "View" %}</div></div></a>
+      <a class="product-card product-card-link" href="{% url 'catalog' %}?q=Браслет"><div class="product-image-area pi3"><div class="ph"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><div class="product-info"><div class="pn">Браслет плетёный</div><div class="pp">950 сом</div><div class="product-button">{% trans "View" %}</div></div></a>
+      <a class="product-card product-card-link" href="{% url 'catalog' %}?q=Ремень"><div class="product-image-area pi4"><div class="ph"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div></div><div class="product-info"><div class="pn">Ремень ручной работы</div><div class="pp">2 400 сом</div><div class="product-button">{% trans "View" %}</div></div></a>
+    </div>
+  </div>
+
+  
+  <a class="pb pb-link" href="{% url 'personalization' %}">
+    <div>
+      <div class="ptag">{% trans "Unique feature" %}</div>
+      <div class="pt">{% trans "Create" %} <em>{% trans "your own" %}</em><br>{% trans "accessory" %}</div>
+      <div class="ps">{% trans "Personalize color, material, and engraving — right on the site." %}</div>
+      <div class="pf"><div class="fd"></div>{% trans "Color and material choice" %}</div>
+      <div class="pf"><div class="fd"></div>{% trans "Add name or initials" %}</div>
+      <div class="pf" style="margin-bottom:18px;"><div class="fd"></div>{% trans "Preview before checkout" %}</div>
+      <span class="bp" style="display:inline-block;">{% trans "Open builder" %}</span>
+    </div>
+    <div class="cbox">
+      <div class="clbl">{% trans "Builder" %}</div>
+      <div class="cprev"><div class="cpbox"></div></div>
+      <div class="csub">{% trans "Pick a color:" %}</div>
+      <div class="copts">
+        <div class="color-option sel" style="background:#C8AA8A;"></div>
+        <div class="color-option" style="background:#6B3A2A;"></div>
+        <div class="color-option" style="background:#F0EBE0;border:1px solid #C8AA8A;"></div>
+        <div class="color-option" style="background:#3A2A50;"></div>
+        <div class="color-option" style="background:#2A4A30;"></div>
+      </div>
+    </div>
+  </a>
+
+  
+  <div class="how">
+    <div style="text-align:center;"><div class="sec-tag">{% trans "Simple and fast" %}</div><div class="sec-t">{% trans "How it" %} <em>{% trans "works" %}</em></div></div>
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><div class="st">{% trans "Pick a product" %}</div><div class="ss">{% trans "Browse the catalog and find the right accessory." %}</div><div class="sarr"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div>
+      <div class="step"><div class="snum">2</div><div class="st">{% trans "Make it yours" %}</div><div class="ss">{% trans "Choose color and material, add engraving." %}</div><div class="sarr"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div>
+      <div class="step"><div class="snum">3</div><div class="st">{% trans "Receive your order" %}</div><div class="ss">{% trans "Place an order and get a one-of-a-kind piece." %}</div></div>
+    </div>
+  </div>
+
+  
+  {% include "shop/partials/site_footer.html" %}
+
+</div>
+</body>
+</html>

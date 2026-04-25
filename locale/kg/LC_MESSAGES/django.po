@@ -1,0 +1,556 @@
+# Kyrgyz translations for Maison Artisan.
+msgid ""
+msgstr ""
+"Project-Id-Version: Maison Artisan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-26 00:31+0600\n"
+"Language: kg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Kyrgyz"
+msgstr "Кыргызча"
+
+msgid "Russian"
+msgstr "Орусча"
+
+msgid "English"
+msgstr "Англисче"
+
+msgid "About"
+msgstr "Биз жөнүндө"
+
+msgid "Home"
+msgstr "Башкы бет"
+
+msgid "Our workshop"
+msgstr "Биздин цех"
+
+msgid "Handmade accessories with care for detail"
+msgstr "Кол өнөрчүлүк аксессуарлары — ар бир деталга көңүл"
+
+msgid ""
+"Maison Artisan is a small team in Bishkek. We work with leather and metal, "
+"offer personalization, and ship across Kyrgyzstan."
+msgstr ""
+"Maison Artisan — Бишкектеги кичине команда. Биз тери жана металл менен "
+"иштейбиз, персонализация сунуштайбыз жана Кыргызстан боюнча жеткирүү "
+"жасайбыз."
+
+msgid "Values"
+msgstr "Негизги баалуулуктар"
+
+msgid "Handwork"
+msgstr "Кол өнөрчүлүк"
+
+msgid ""
+"Each piece is assembled and finished by hand — no mass production lines."
+msgstr "Ар бир нерсе кол менен чогултулат жана бүтүрүлөт — конвейер жок."
+
+msgid "Quality"
+msgstr "Сапат"
+
+msgid ""
+"We check materials and every order before shipping. We are honest about "
+"timing and care."
+msgstr ""
+"Материалдарды жана ар бир буйрутманы жөнөтүүдөн мурун текшеребиз. Мөөнөт "
+"жана камкордук боюнча ачыкпыз."
+
+msgid "Personalization"
+msgstr "Конструктор"
+
+msgid ""
+"Choose color, engraving, and details where the product allows — we guide you "
+"through the process."
+msgstr ""
+"Товар уруксат берген жерде түс, гравировка жана деталдарды тандаңыз — биз "
+"процесстен өткөрүп беребиз."
+
+msgid "Browse catalog"
+msgstr "Каталогду көрүү"
+
+msgid "Contact us"
+msgstr "Байланыш"
+
+msgid "Account"
+msgstr "Профиль"
+
+msgid "My account"
+msgstr "Жеке кабинет"
+
+msgid ""
+"This section is under construction. You can place orders via the cart and "
+"checkout without signing in."
+msgstr ""
+"Бөлүм иштелип жатат. Катталуусуз буйрутма берүү үчүн себет жана буйрутма "
+"формасын колдонсоңуз болот."
+
+msgid "Cart"
+msgstr "Себет"
+
+msgid "Catalog"
+msgstr "Каталог"
+
+msgid "Contacts"
+msgstr "Байланыш"
+
+msgid "Clear cart"
+msgstr "Себетти тазалоо"
+
+msgid "Back to catalog"
+msgstr "Каталогго кайтуу"
+
+msgid "KGS"
+msgstr "сом"
+
+msgid "Remove"
+msgstr "Өчүрүү"
+
+msgid "Order total"
+msgstr "Жыйынтык"
+
+msgid "Items"
+msgstr "Товарлар"
+
+msgid "Total"
+msgstr "Сумма"
+
+msgid "Checkout"
+msgstr "Буйрутма"
+
+msgid "Your cart is empty"
+msgstr "Себет бош"
+
+msgid "Full assortment"
+msgstr "Толук ассортимент"
+
+msgid "of products"
+msgstr "товарлар"
+
+#, python-format
+msgid "%(n)s handmade pieces · Personalization on everything"
+msgstr "%(n)s кол өнөрчүлүк нерсе · Баарына персонализация"
+
+msgid "Categories"
+msgstr "Категориялар"
+
+msgid "All products"
+msgstr "Бардык товарлар"
+
+msgid "Price (KGS)"
+msgstr "Баасы (сом)"
+
+msgid "From"
+msgstr "Баштап"
+
+msgid "To"
+msgstr "Чейин"
+
+msgid "Apply"
+msgstr "Колдонуу"
+
+msgid "Color"
+msgstr "Түс"
+
+msgid "Selected colors"
+msgstr "Тандалган түстөр"
+
+msgid "Material"
+msgstr "Материал"
+
+msgid "Options"
+msgstr "Опциялар"
+
+msgid "Engraving"
+msgstr "Гравировка"
+
+msgid "Gift packaging"
+msgstr "Сыйлык каптоо"
+
+msgid "Hits only"
+msgstr "Гана хиттер"
+
+msgid "Reset filters"
+msgstr "Фильтрлерди тазалоо"
+
+msgid "Found"
+msgstr "Табылды"
+
+msgid "product(s)"
+msgstr "товар(лар)"
+
+msgid "No filters"
+msgstr "Фильтр жок"
+
+msgid "Search by name"
+msgstr "Аты боюнча издөө"
+
+msgid "Sort: popularity"
+msgstr "Популярдуулук боюнча"
+
+msgid "Sort: price low"
+msgstr "Арзанынан"
+
+msgid "Sort: price high"
+msgstr "Кымбатынан"
+
+msgid "Sort: newest"
+msgstr "Жаңылар"
+
+msgid "Sort: rating"
+msgstr "Рейтинг боюнча"
+
+msgid "Search"
+msgstr "Издөө"
+
+msgid "Photo"
+msgstr "Сүрөт"
+
+msgid "HIT"
+msgstr "ХИТ"
+
+msgid "NEW"
+msgstr "ЖАҢЫ"
+
+msgid "SALE"
+msgstr "АРЗАНДАТУУ"
+
+msgid "Material to be confirmed"
+msgstr "Материал такталат"
+
+msgid "Details"
+msgstr "Кененирээк"
+
+msgid "Add to cart"
+msgstr "Себетке"
+
+msgid "No products in the catalog yet"
+msgstr "Каталогдо азырынча товар жок"
+
+msgid "Add products in the admin: /admin"
+msgstr "Товарларды админке аркылуу кошуңуз: /admin"
+
+#, python-format
+msgid "Page %(num)s of %(total)s"
+msgstr "Барак %(num)s / %(total)s"
+
+msgid "Back to cart"
+msgstr "Себетке кайтуу"
+
+msgid "pcs."
+msgstr "дана"
+
+msgid "Customer details"
+msgstr "Сатып алуучу маалыматы"
+
+msgid "Full name"
+msgstr "Толук аты"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Delivery address"
+msgstr "Жеткирүү дареги"
+
+msgid "Order comment"
+msgstr "Буйрутма комментарийи"
+
+msgid "Confirm order"
+msgstr "Буйрутманы ырастоо"
+
+msgid "Cart is empty — nothing to checkout."
+msgstr "Себет бош — буйрутма берүүгө эмне жок."
+
+msgid "Order placed"
+msgstr "Буйрутма кабыл алынды"
+
+msgid "Thank you! Your order has been received."
+msgstr "Рахмат! Буйрутмаңыз кабыл алынды."
+
+msgid "We will contact you to confirm."
+msgstr "Ырастоо үчүн сиз менен байланышабыз."
+
+msgid "We are always in touch"
+msgstr "Ар дайым байланыштабыз"
+
+msgid "Reach out"
+msgstr "Байланышыңыз"
+
+msgid "to us"
+msgstr "биз менен"
+
+msgid ""
+"Questions about an order, personalization, or getting to know our workshop — "
+"write, call, or visit."
+msgstr ""
+"Буйрутма, персонализация же цех менен таанышуу боюнча суроолор болсо — "
+"жазыңыз, чалыңыз же келип калыңыз."
+
+msgid "Mon–Sat, 10:00–19:00"
+msgstr "Дш–Иш, 10:00–19:00"
+
+msgid "We reply within one business day"
+msgstr "Бир иш күнү ичинде жооп беребиз"
+
+msgid "Address"
+msgstr "Дарек"
+
+msgid "Write to us"
+msgstr "Бизге жазыңыз"
+
+msgid "Feedback form line1"
+msgstr "Форма"
+
+msgid "Feedback form emphasis"
+msgstr "байланыш үчүн"
+
+msgid "Maison Artisan — handmade accessories"
+msgstr "Maison Artisan — кол өнөрчүлүк аксессуарлары"
+
+msgid "Handmade · Premium quality"
+msgstr "Кол өнөрчүлүк · Премиум сапат"
+
+msgid "Accessories,"
+msgstr "Аксессуарлар,"
+
+msgid "crafted"
+msgstr "жаратылган"
+
+msgid "with soul"
+msgstr "жан менен"
+
+msgid "Every piece tells a story."
+msgstr "Ар бир нерсе өз тарыхын айтат."
+
+msgid "Personalize, choose, get inspired."
+msgstr "Персонализация кыл, танда, шыңдал."
+
+msgid "Create your own"
+msgstr "Өзүңүздүкүн түзүңүз"
+
+msgid "Product photo"
+msgstr "Товардын сүрөтү"
+
+msgid "Handmade"
+msgstr "Кол өнөрчүлүк"
+
+msgid "Every piece is unique"
+msgstr "Ар бир нерсе уникалдуу"
+
+msgid "Name, color, material"
+msgstr "Аты, түс, материал"
+
+msgid "Fast delivery"
+msgstr "Тез жеткирүү"
+
+msgid "Across the country"
+msgstr "Өлкө боюнча"
+
+msgid "Quality guarantee"
+msgstr "Сапат кепилдиги"
+
+msgid "30-day returns"
+msgstr "30 күн ичинде кайтаруу"
+
+msgid "Assortment"
+msgstr "Ассортимент"
+
+msgid "Categories heading"
+msgstr "Категориялар"
+
+msgid "of goods"
+msgstr "товарлар"
+
+msgid "All categories"
+msgstr "Бардык категориялар"
+
+msgid "models"
+msgstr "моделдер"
+
+msgid "Open products"
+msgstr "Товарларды ачуу"
+
+msgid "Popular"
+msgstr "Популярдуу"
+
+msgid "Our"
+msgstr "Биздин"
+
+msgid "hits"
+msgstr "хиттер"
+
+msgid "See all"
+msgstr "Баарын көрүү"
+
+msgid "Bestsellers"
+msgstr "Сатууда лидерлер"
+
+msgid "New arrivals"
+msgstr "Жаңылар"
+
+msgid "Promotions"
+msgstr "Акциялар"
+
+msgid "View"
+msgstr "Көрүү"
+
+msgid "Unique feature"
+msgstr "Уникалдуу өзгөчөлүк"
+
+msgid "Create"
+msgstr "Түз"
+
+msgid "your own"
+msgstr "өзүңдүк"
+
+msgid "accessory"
+msgstr "аксессуар"
+
+msgid "Personalize color, material, and engraving — right on the site."
+msgstr "Түс, материал жана гравировканы сайттан эле персонализацияла."
+
+msgid "Color and material choice"
+msgstr "Түс жана материал тандоо"
+
+msgid "Add name or initials"
+msgstr "Ат же инициалдарды кошуу"
+
+msgid "Preview before checkout"
+msgstr "Буйрутмадан мурун көрүнүш"
+
+msgid "Open builder"
+msgstr "Куруучуну ачуу"
+
+msgid "Builder"
+msgstr "Куруучу"
+
+msgid "Pick a color:"
+msgstr "Түстү танда:"
+
+msgid "Simple and fast"
+msgstr "Жөнөкөй жана тез"
+
+msgid "How it"
+msgstr "Бул кантип"
+
+msgid "works"
+msgstr "иштейт"
+
+msgid "Pick a product"
+msgstr "Товар танда"
+
+msgid "Browse the catalog and find the right accessory."
+msgstr "Каталогду карап, туура аксессуарды тап."
+
+msgid "Make it yours"
+msgstr "Өзүңө ылайыкта"
+
+msgid "Choose color and material, add engraving."
+msgstr "Түс менен материалды танда, гравировка кош."
+
+msgid "Receive your order"
+msgstr "Буйрутмаңды ал"
+
+msgid "Place an order and get a one-of-a-kind piece."
+msgstr "Буйрутма берип, уникалдуу нерсеңди ал."
+
+msgid "Language"
+msgstr "Тил"
+
+msgid "Handmade accessories with personalization. Every piece is unique."
+msgstr ""
+"Персонализация менен кол өнөрчүлүк аксессуарлары. Ар бир нерсе уникалдуу."
+
+msgid "Bags"
+msgstr "Сумкалар"
+
+msgid "Wallets"
+msgstr "Капчыктар"
+
+msgid "Jewelry"
+msgstr "Зер буюмдар"
+
+msgid "Belts"
+msgstr "Курлар"
+
+msgid "Help"
+msgstr "Жардам"
+
+msgid "Delivery"
+msgstr "Жеткирүү"
+
+msgid "Returns"
+msgstr "Кайтаруу"
+
+msgid "Payment"
+msgstr "Төлөм"
+
+msgid "Company"
+msgstr "Компания"
+
+msgid "Craftsmen"
+msgstr "Усталар"
+
+msgid "Blog"
+msgstr "Блог"
+
+msgid "© 2025 Maison Artisan. All rights reserved."
+msgstr "© 2025 Maison Artisan. Бардык укуктар корголгон."
+
+msgid "Main navigation"
+msgstr "Негизги меню"
+
+msgid ""
+"Description will appear soon. The item is already available for "
+"personalization and order."
+msgstr "Сүрөттөмө жакында чыгат. Товар персонализация жана буйрутма үчүн даяр."
+
+msgid "Reviews"
+msgstr "Пикирлер"
+
+msgid "Product color"
+msgstr "Товардын түсү"
+
+msgid "Related products"
+msgstr "Окшош товарлар"
+
+msgid "No related products yet."
+msgstr "Азырынча окшош товар жок."
+
+#, python-format
+msgid "Category: %(name)s"
+msgstr "Категория: %(name)s"
+
+#, python-format
+msgid "Min price: %(value)s"
+msgstr "Баасы: %(value)s баштап"
+
+#, python-format
+msgid "Max price: %(value)s"
+msgstr "Баасы чейин: %(value)s"
+
+#, python-format
+msgid "Material: %(name)s"
+msgstr "Материал: %(name)s"
+
+#, python-format
+msgid "Color: %(name)s"
+msgstr "Түс: %(name)s"
+
+msgid "Go to cart"
+msgstr "Себетке"
+
+msgid "Continue shopping"
+msgstr "Соода улантуу"
+
+#, python-format
+msgid "Fitting: %(name)s"
+msgstr "Фурнитура: %(name)s"
+
+#, python-format
+msgid "Engraving: %(text)s"
+msgstr "Гравировка: %(text)s"
+

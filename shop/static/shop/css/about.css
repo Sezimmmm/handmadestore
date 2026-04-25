@@ -1,0 +1,109 @@
+/* About page — matches catalog chrome (catalog.css + common.css) */
+
+.about-page .about-wrap {
+  padding: 28px 28px 36px;
+  background: var(--bg, #eeece6);
+}
+
+.about-head {
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.about-kicker {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid, #a07850);
+}
+
+.about-title {
+  margin: 0 0 14px;
+  font-family: var(--font-serif, "Cormorant Garamond", Georgia, serif);
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 500;
+  color: var(--dark, #2a1a10);
+  line-height: 1.2;
+}
+
+.about-lead {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #5a4030;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.about-card {
+  background: #fffefc;
+  border: 1px solid var(--border, #ddd0c0);
+  border-radius: 12px;
+  padding: 18px 18px 16px;
+}
+
+.about-card h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-serif, "Cormorant Garamond", Georgia, serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--tiramisu, #6b3a2a);
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #5a4030;
+}
+
+.about-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.about-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.about-btn-primary {
+  background: var(--tiramisu, #6b3a2a);
+  color: var(--cream, #f0ebe0);
+  border: 1px solid var(--tiramisu, #6b3a2a);
+}
+
+.about-btn-primary:hover {
+  background: #5a3122;
+}
+
+.about-btn-outline {
+  background: #fff;
+  color: var(--tiramisu, #6b3a2a);
+  border: 1px solid var(--border, #ddd0c0);
+}
+
+.about-btn-outline:hover {
+  border-color: var(--sand, #c8aa8a);
+  background: #faf7f3;
+}
+
+@media (max-width: 520px) {
+  .about-page .about-wrap {
+    padding: 20px 16px 28px;
+  }
+}

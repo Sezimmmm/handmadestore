@@ -1,0 +1,8 @@
+{% load i18n %}
+<nav class="main-nav" aria-label="{% trans 'Main navigation' %}">
+  <a class="nav-link{% if active_nav == 'home' %} on{% endif %}" href="{% url 'home' %}">{% trans "Home" %}</a>
+  <a class="nav-link{% if active_nav == 'catalog' %} on{% endif %}" href="{% url 'catalog' %}">{% trans "Catalog" %}</a>
+  <a class="nav-link{% if active_nav == 'personalization' %} on{% endif %}" href="{% url 'personalization' %}">{% trans "Personalization" %}</a>
+  <a class="nav-link{% if active_nav == 'about' %} on{% endif %}" href="{% url 'about' %}">{% trans "About" %}</a>
+  <a class="nav-link{% if active_nav == 'contacts' %} on{% endif %}" href="{% url 'contacts' %}">{% trans "Contacts" %}</a>
+</nav>

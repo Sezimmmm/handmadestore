@@ -1,0 +1,211 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% trans "Contacts" %} — Maison Artisan</title>
+<link rel="icon" type="image/svg+xml" href="{% static 'shop/favicon.svg' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/css/contacts.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/common.css' %}">
+</head>
+<body>
+<div class="page-container">
+
+  
+  <div class="site-header">
+    <a class="logo-wrap" href="{% url 'home' %}">
+      <div class="logo-square">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="logo-title">Maison Artisan</span>
+    </a>
+    {% include "shop/partials/site_nav.html" with active_nav="contacts" %}
+    {% include "shop/partials/header_actions.html" %}
+  </div>
+
+  
+  <div class="breadcrumb">
+    <a href="{% url 'home' %}">{% trans "Home" %}</a>
+    <span class="bc-sep">›</span>
+    <span class="is-current">{% trans "Contacts" %}</span>
+  </div>
+
+  
+  <div class="chero">
+    <div class="chero-bg"></div>
+    <div class="chero-content">
+      <div class="htag"><div class="htag-dot"></div>{% trans "We are always in touch" %}</div>
+      <h1>{% trans "Reach out" %} <em>{% trans "to us" %}</em></h1>
+      <p>{% trans "Questions about an order, personalization, or getting to know our workshop — write, call, or visit." %}</p>
+    </div>
+  </div>
+
+  
+  <div class="qc-row">
+    <div class="qc-item">
+      <div class="qc-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.2 6.2l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div>
+        <div class="qc-label">{% trans "Phone" %}</div>
+        <div class="qc-val">+996 700 123 456</div>
+        <div class="qc-sub">{% trans "Mon–Sat, 10:00–19:00" %}</div>
+      </div>
+    </div>
+    <div class="qc-item">
+      <div class="qc-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div>
+        <div class="qc-label">Email</div>
+        <div class="qc-val">hello@maison-artisan.kg</div>
+        <div class="qc-sub">{% trans "We reply within one business day" %}</div>
+      </div>
+    </div>
+    <div class="qc-item">
+      <div class="qc-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div>
+        <div class="qc-label">{% trans "Address" %}</div>
+        <div class="qc-val">Бишкек, ул. Киевская 96</div>
+        <div class="qc-sub">ТЦ «Артем», 2 этаж, бутик 12</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="cbody">
+
+    
+    <div class="cf">
+      <div class="sec-tag">{% trans "Write to us" %}</div>
+      <div class="sec-t">{% trans "Feedback form line1" %} <em>{% trans "Feedback form emphasis" %}</em></div>
+
+      <div class="form-2col">
+        <div class="form-row">
+          <label>Ваше имя</label>
+          <input type="text" placeholder="Айгуль">
+        </div>
+        <div class="form-row">
+          <label>Телефон / Email</label>
+          <input type="text" placeholder="+996 700 ...">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Тема обращения</label>
+        <select>
+          <option value="" disabled selected>Выберите тему</option>
+          <option>Вопрос по заказу</option>
+          <option>Персонализация товара</option>
+          <option>Доставка и оплата</option>
+          <option>Возврат / обмен</option>
+          <option>Сотрудничество</option>
+          <option>Другое</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Сообщение</label>
+        <textarea placeholder="Расскажите, чем мы можем помочь..."></textarea>
+      </div>
+
+      <button class="submit-btn" onclick="sendForm()">Отправить сообщение</button>
+      <div class="toast" id="toast">✓ Спасибо! Ваше сообщение отправлено. Мы ответим в течение рабочего дня.</div>
+      <div class="form-note">Нажимая «Отправить», вы соглашаетесь с политикой конфиденциальности.</div>
+    </div>
+
+    
+    <div class="cinfo">
+
+      
+      <div class="hours-block">
+        <div class="sec-tag">График работы</div>
+        <div class="sec-t" style="margin-bottom:10px;">Мы <em>открыты</em></div>
+        <div class="hours-row">
+          <span class="hr-day">Понедельник — Пятница</span>
+          <div style="display:flex;align-items:center;gap:6px;"><span class="hr-time">10:00 — 19:00</span><span class="hr-badge">Работаем</span></div>
+        </div>
+        <div class="hours-row">
+          <span class="hr-day">Суббота</span>
+          <span class="hr-time">11:00 — 17:00</span>
+        </div>
+        <div class="hours-row">
+          <span class="hr-day">Воскресенье</span>
+          <span class="hr-time" style="color:#C8706A;">Выходной</span>
+        </div>
+      </div>
+
+      
+      <div class="map-block">
+        <div class="sec-tag">Адрес</div>
+        <div class="sec-t" style="margin-bottom:10px;">Найти нас <em>на карте</em></div>
+        <div class="map-box">
+          <div class="map-overlay"></div>
+          <div class="map-pin"><div class="map-pin-inner"></div></div>
+          <div class="map-addr">Киевская 96, ТЦ «Артем»</div>
+        </div>
+        <span class="map-link">Открыть в 2GIS →</span>
+      </div>
+
+      
+      <div class="social-block">
+        <div class="sec-tag">Соцсети</div>
+        <div class="sec-t" style="margin-bottom:10px;">Мы в <em>Instagram & Telegram</em></div>
+        <div class="soc-row">
+          <div class="soc-btn">
+            <div class="soc-ic" style="background:#E8D8C8;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div><div class="soc-name">Instagram</div><div class="soc-sub">@maison.artisan.kg</div></div>
+          </div>
+          <div class="soc-btn">
+            <div class="soc-ic" style="background:#D8EAF0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2A6A8A" stroke-width="1.5"><path d="M21.44 2L2.06 9.75l7.19 3.16 2.85 7.09L21.44 2z"/><path d="M9.25 12.91l9.19-8.69"/></svg>
+            </div>
+            <div><div class="soc-name">Telegram</div><div class="soc-sub">@maison_artisan</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+  <div class="faq" id="faq">
+    <div style="text-align:center;margin-bottom:4px;"><div class="sec-tag" style="display:inline-block;">Частые вопросы</div></div>
+    <div class="sec-t" style="text-align:center;margin-bottom:0;">Ответы на <em>вопросы</em></div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Сколько занимает персонализация?
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="faq-a">Обычно 2–5 рабочих дней в зависимости от типа изделия и сложности гравировки.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Можно ли вернуть персонализированный товар?
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="faq-a">Персонализированные изделия возврату не подлежат, если дефект не является заводским браком.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Есть ли доставка в другие города?
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="faq-a">Да, доставляем по всему Кыргызстану через SALAM и Достук Доставка, а также на Wildberries KG.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как оплатить заказ?
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="faq-a">Принимаем Mbank, O!Money, Элcом, наличные в точке выдачи и банковские карты.</div>
+      </div>
+    </div>
+  </div>
+
+  
+  {% include "shop/partials/site_footer.html" %}
+
+</div>
+  <script src="{% static 'shop/js/contacts.js' %}"></script>
+</body>
+</html>

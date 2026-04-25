@@ -1,0 +1,410 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% trans "Personalization" %} — Maison Artisan</title>
+<link rel="icon" type="image/svg+xml" href="{% static 'shop/favicon.svg' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/css/personalization.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/common.css' %}">
+</head>
+<body>
+<div class="page-container">
+
+  
+  <div class="site-header">
+    <a class="logo-wrap" href="{% url 'home' %}">
+      <div class="logo-square"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+      <span class="logo-title">Maison Artisan</span>
+    </a>
+    {% include "shop/partials/site_nav.html" with active_nav="personalization" %}
+    {% include "shop/partials/header_actions.html" %}
+  </div>
+
+  
+  <div class="breadcrumb">
+    <a href="{% url 'home' %}">{% trans "Home" %}</a><span class="bc-sep">›</span>
+    <span class="is-current">{% trans "Personalization" %}</span>
+  </div>
+
+  
+  <div class="phero">
+    <div class="phero-bg"></div>
+    <div class="phero-content">
+      <div>
+        <div class="htag"><div class="htag-dot"></div>Конструктор изделий</div>
+        <h1>Создай <em>уникальный</em><br>аксессуар</h1>
+        <p>Выбери изделие, материал, цвет и добавь персональную гравировку — получи предмет, созданный только для тебя.</p>
+        <div class="hero-steps">
+          <div class="hs"><div class="hs-n">1</div>Товар</div>
+          <span class="hs-sep">→</span>
+          <div class="hs"><div class="hs-n">2</div>Материал</div>
+          <span class="hs-sep">→</span>
+          <div class="hs"><div class="hs-n">3</div>Цвет</div>
+          <span class="hs-sep">→</span>
+          <div class="hs"><div class="hs-n">4</div>Гравировка</div>
+          <span class="hs-sep">→</span>
+          <div class="hs"><div class="hs-n">5</div>Опции</div>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <div class="hb-num">70+</div>
+        <div class="hb-sub">вариантов<br>изделий</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="step-nav" id="stepNav">
+    <div class="sn-item active" onclick="goStep(1)" id="sn1"><div class="sn-num">1</div>Выбор товара</div>
+    <span class="sn-arr">›</span>
+    <div class="sn-item" onclick="goStep(2)" id="sn2"><div class="sn-num">2</div>Материал</div>
+    <span class="sn-arr">›</span>
+    <div class="sn-item" onclick="goStep(3)" id="sn3"><div class="sn-num">3</div>Цвет</div>
+    <span class="sn-arr">›</span>
+    <div class="sn-item" onclick="goStep(4)" id="sn4"><div class="sn-num">4</div>Гравировка</div>
+    <span class="sn-arr">›</span>
+    <div class="sn-item" onclick="goStep(5)" id="sn5"><div class="sn-num">5</div>Доп. опции</div>
+  </div>
+
+  
+  <div class="constructor">
+
+    
+    <div class="left-panel">
+
+      
+      <div class="step-section active" id="step1">
+        <h2>Выбери <em>товар</em></h2>
+        <p class="step-desc">Выберите базовое изделие для персонализации. Цена и доступные опции зависят от выбранного товара.</p>
+        <div class="prod-grid">
+          <div class="prod-opt sel" onclick="selectProd(this,'Сумка кожаная',4900,'#C8AA8A','bag')">
+            <div class="prod-thumb" style="background:#E0C8A8;border-radius:5px;">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            </div>
+            <div class="prod-name">Сумка</div>
+            <div class="prod-price">от 4 900 сом</div>
+            <div class="prod-check"><svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3l2 2 4-4" stroke="#F0EBE0" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="prod-opt" onclick="selectProd(this,'Кошелёк',1800,'#D8C0A0','wallet')">
+            <div class="prod-thumb" style="background:#D8C0A0;border-radius:5px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 12h.01"/></svg>
+            </div>
+            <div class="prod-name">Кошелёк</div>
+            <div class="prod-price">от 1 800 сом</div>
+            <div class="prod-check"></div>
+          </div>
+          <div class="prod-opt" onclick="selectProd(this,'Браслет',950,'#C0A870','bracelet')">
+            <div class="prod-thumb" style="background:#C8B888;border-radius:5px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18"/></svg>
+            </div>
+            <div class="prod-name">Браслет</div>
+            <div class="prod-price">от 950 сом</div>
+            <div class="prod-check"></div>
+          </div>
+          <div class="prod-opt" onclick="selectProd(this,'Ремень',2400,'#B8A080','belt')">
+            <div class="prod-thumb" style="background:#D0B898;border-radius:5px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><rect x="1" y="8" width="22" height="8" rx="2"/><path d="M5 12h.01"/></svg>
+            </div>
+            <div class="prod-name">Ремень</div>
+            <div class="prod-price">от 2 400 сом</div>
+            <div class="prod-check"></div>
+          </div>
+          <div class="prod-opt" onclick="selectProd(this,'Брелок',680,'#A89060','keychain')">
+            <div class="prod-thumb" style="background:#C0A878;border-radius:5px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/><path d="M9 18h6"/></svg>
+            </div>
+            <div class="prod-name">Брелок</div>
+            <div class="prod-price">от 680 сом</div>
+            <div class="prod-check"></div>
+          </div>
+          <div class="prod-opt" onclick="selectProd(this,'Обложка',1200,'#B8A888','cover')">
+            <div class="prod-thumb" style="background:#D8C8A8;border-radius:5px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            </div>
+            <div class="prod-name">Обложка</div>
+            <div class="prod-price">от 1 200 сом</div>
+            <div class="prod-check"></div>
+          </div>
+        </div>
+        <div class="step-btns">
+          <div></div>
+          <button class="btn-next" onclick="goStep(2)">Выбрать материал <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      
+      <div class="step-section" id="step2">
+        <h2>Выбери <em>материал</em></h2>
+        <p class="step-desc">Каждый материал имеет свою фактуру, износостойкость и цену. Натуральная кожа — премиум выбор для долгой службы.</p>
+        <div class="mat-row">
+          <div class="mat-opt sel" onclick="selectMat(this,'Натуральная кожа','+500')">
+            <div class="mat-ic" style="background:linear-gradient(135deg,#8A6040,#C8A070);"></div>
+            <div class="mat-name">Нат. кожа</div>
+            <div class="mat-sub">Высший сорт</div>
+            <div class="mat-price">+500 сом</div>
+          </div>
+          <div class="mat-opt" onclick="selectMat(this,'Замша','+300')">
+            <div class="mat-ic" style="background:linear-gradient(135deg,#A07858,#D8B888);"></div>
+            <div class="mat-name">Замша</div>
+            <div class="mat-sub">Мягкая фактура</div>
+            <div class="mat-price">+300 сом</div>
+          </div>
+          <div class="mat-opt" onclick="selectMat(this,'Растительное дубление','0')">
+            <div class="mat-ic" style="background:linear-gradient(135deg,#6B4A28,#A07848);"></div>
+            <div class="mat-name">Вег. дубление</div>
+            <div class="mat-sub">Эко-дублёная</div>
+            <div class="mat-price">Базовая</div>
+          </div>
+          <div class="mat-opt" onclick="selectMat(this,'Комбинированный','0')">
+            <div class="mat-ic" style="background:linear-gradient(135deg,#C8A880,#888068);"></div>
+            <div class="mat-name">Комбо</div>
+            <div class="mat-sub">Кожа + ткань</div>
+            <div class="mat-price">Базовая</div>
+          </div>
+          <div class="mat-opt" onclick="selectMat(this,'Металл + кожа','+700')">
+            <div class="mat-ic" style="background:linear-gradient(135deg,#888888,#C8B888);"></div>
+            <div class="mat-name">Металл + кожа</div>
+            <div class="mat-sub">Стильный микс</div>
+            <div class="mat-price">+700 сом</div>
+          </div>
+          <div class="mat-opt" onclick="selectMat(this,'Текстиль','0')">
+            <div class="mat-ic" style="background:repeating-linear-gradient(45deg,#D0B880 0,#D0B880 4px,#B89858 4px,#B89858 8px);"></div>
+            <div class="mat-name">Текстиль</div>
+            <div class="mat-sub">Тканевая основа</div>
+            <div class="mat-price">Базовая</div>
+          </div>
+        </div>
+        <div class="step-btns">
+          <button class="btn-back" onclick="goStep(1)">← Назад</button>
+          <button class="btn-next" onclick="goStep(3)">Выбрать цвет <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      
+      <div class="step-section" id="step3">
+        <h2>Выбери <em>цвет</em></h2>
+        <p class="step-desc">Все цвета подобраны по Pantone-стандарту. Нажми на образец, чтобы увидеть превью в конструкторе.</p>
+        <div class="color-section">
+          <div class="color-label">Основной цвет</div>
+          <div class="color-grid">
+            <div class="color-option sel" style="background:#C8AA8A;" onclick="selectColor(this,'Bleached Sand','#C8AA8A')" title="Bleached Sand"></div>
+            <div class="color-option" style="background:#6B3A2A;" onclick="selectColor(this,'Tiramisu','#6B3A2A')" title="Tiramisu"></div>
+            <div class="color-option" style="background:#F0EBE0;border:1px solid #DDD0C0;" onclick="selectColor(this,'Coconut Milk','#F0EBE0')" title="Coconut Milk"></div>
+            <div class="color-option" style="background:#2A1A10;" onclick="selectColor(this,'Espresso','#2A1A10')" title="Espresso"></div>
+            <div class="color-option" style="background:#A07850;" onclick="selectColor(this,'Mid Tan','#A07850')" title="Mid Tan"></div>
+            <div class="color-option" style="background:#3A2A50;" onclick="selectColor(this,'Midnight','#3A2A50')" title="Midnight"></div>
+            <div class="color-option" style="background:#2A4A30;" onclick="selectColor(this,'Forest','#2A4A30')" title="Forest"></div>
+            <div class="color-option" style="background:#8A2A2A;" onclick="selectColor(this,'Burgundy','#8A2A2A')" title="Burgundy"></div>
+            <div class="color-option" style="background:#4A6A80;" onclick="selectColor(this,'Slate Blue','#4A6A80')" title="Slate Blue"></div>
+            <div class="color-option" style="background:#888060;" onclick="selectColor(this,'Khaki','#888060')" title="Khaki"></div>
+          </div>
+          <div class="co-name" id="colorName">Bleached Sand — PANTONE 15-1120 TCX</div>
+        </div>
+        <div class="color-section">
+          <div class="color-label">Цвет фурнитуры</div>
+          <div class="color-grid">
+            <div class="color-option sel" style="background:#C8B060;" onclick="selectFitting(this,'Золото')" title="Золото"></div>
+            <div class="color-option" style="background:#B0B0B0;" onclick="selectFitting(this,'Серебро')" title="Серебро"></div>
+            <div class="color-option" style="background:#808070;" onclick="selectFitting(this,'Никель матовый')" title="Никель матовый"></div>
+            <div class="color-option" style="background:#2A1A10;" onclick="selectFitting(this,'Чёрный')" title="Чёрный"></div>
+          </div>
+        </div>
+        <div class="step-btns">
+          <button class="btn-back" onclick="goStep(2)">← Назад</button>
+          <button class="btn-next" onclick="goStep(4)">Добавить гравировку <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      
+      <div class="step-section" id="step4">
+        <h2>Гравировка <em>и текст</em></h2>
+        <p class="step-desc">Добавь имя, инициалы, дату или короткое послание. Гравировка выполняется лазером и не стирается.</p>
+
+        <div class="font-previews">
+          <div class="fp sel" onclick="selectFont(this,'serif','Классика')">
+            <div class="fp-sample" style="font-family:Georgia,serif;font-style:italic;">Аb</div>
+            <div class="fp-name">Классика</div>
+          </div>
+          <div class="fp" onclick="selectFont(this,'sans-serif','Современный')">
+            <div class="fp-sample" style="font-family:sans-serif;font-weight:300;letter-spacing:.05em;">Аb</div>
+            <div class="fp-name">Современный</div>
+          </div>
+          <div class="fp" onclick="selectFont(this,'cursive','Рукопись')">
+            <div class="fp-sample" style="font-family:cursive;">Аb</div>
+            <div class="fp-name">Рукопись</div>
+          </div>
+        </div>
+
+        <div class="eng-row">
+          <div class="form-row">
+            <label>Текст гравировки</label>
+            <input type="text" id="engravingText" maxlength="20" placeholder="Ваше имя / инициалы" oninput="updateEngraving()">
+            <div class="char-count"><span id="charCount">0</span>/20 символов</div>
+          </div>
+          <div class="form-row">
+            <label>Расположение</label>
+            <select id="engravingPlacement" onchange="setEngravingPlacement(this)">
+              <option value="По центру">По центру</option>
+              <option value="Снизу справа">Снизу справа</option>
+              <option value="Снизу слева">Снизу слева</option>
+              <option value="Внутри">Внутри</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row" style="margin-bottom:14px;">
+          <label>Вторая строка (необязательно)</label>
+          <input type="text" maxlength="20" placeholder="Дата, слоган, пожелание..." oninput="updateEngravingLine2(this)">
+        </div>
+        <div class="step-btns">
+          <button class="btn-back" onclick="goStep(3)">← Назад</button>
+          <button class="btn-next" onclick="goStep(5)">Доп. опции <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      
+      <div class="step-section" id="step5">
+        <h2>Дополнительные <em>опции</em></h2>
+        <p class="step-desc">Сделай подарок незабываемым. Все опции добавляются к итоговой сумме заказа.</p>
+        <div class="extras-grid">
+          <div class="extra-opt" onclick="toggleExtra(this,'Подарочная упаковка',350)">
+            <div class="extra-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div>
+            <div><div class="extra-name">Подарочная упаковка</div><div class="extra-sub">Фирменная коробка Maison Artisan</div><div class="extra-price">+350 сом</div></div>
+          </div>
+          <div class="extra-opt" onclick="toggleExtra(this,'Открытка с пожеланием',150)">
+            <div class="extra-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="extra-name">Открытка</div><div class="extra-sub">С вашим пожеланием от руки</div><div class="extra-price">+150 сом</div></div>
+          </div>
+          <div class="extra-opt" onclick="toggleExtra(this,'Срочное изготовление',500)">
+            <div class="extra-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><div class="extra-name">Срочно (1–2 дня)</div><div class="extra-sub">Приоритетное изготовление</div><div class="extra-price">+500 сом</div></div>
+          </div>
+          <div class="extra-opt" onclick="toggleExtra(this,'Лента и монограмма',200)">
+            <div class="extra-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+            <div><div class="extra-name">Лента + монограмма</div><div class="extra-sub">Фирменная лента на изделие</div><div class="extra-price">+200 сом</div></div>
+          </div>
+        </div>
+        <div class="step-btns">
+          <button class="btn-back" onclick="goStep(4)">← Назад</button>
+          <button class="btn-next" onclick="addToCart()" style="background:#2A6A20;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            Добавить в корзину
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <div class="right-panel">
+      <div class="preview-title">Превью вашего изделия</div>
+
+      <div class="preview-box">
+        <div class="pb-bg"></div>
+        <div class="preview-product">
+          <div class="pp-shape" id="previewShape"></div>
+          <div class="pp-engraving" id="previewEngraving"></div>
+          <div class="pp-label" id="previewLabel">Нажмите для вращения</div>
+        </div>
+      </div>
+
+      <div class="config-sum">
+        <div class="cs-row"><span class="cs-key">Товар</span><span class="cs-val" id="sumProd">Сумка кожаная</span></div>
+        <div class="cs-row"><span class="cs-key">Материал</span><span class="cs-val" id="sumMat">Натуральная кожа</span></div>
+        <div class="cs-row"><span class="cs-key">Цвет</span><span class="cs-val" id="sumColor">Bleached Sand</span></div>
+        <div class="cs-row"><span class="cs-key">Гравировка</span><span class="cs-val" id="sumEng">—</span></div>
+        <div class="cs-row"><span class="cs-key">Опции</span><span class="cs-val" id="sumExtras">—</span></div>
+      </div>
+
+      <div class="price-block">
+        <div class="pb-row"><span>Базовая цена</span><span id="priceBase">4 900 сом</span></div>
+        <div class="pb-row"><span>Материал</span><span id="priceMat">+500 сом</span></div>
+        <div class="pb-row"><span>Гравировка</span><span id="priceEng">+400 сом</span></div>
+        <div class="pb-row"><span>Опции</span><span id="priceExtras">—</span></div>
+        <div class="pb-total">
+          <span class="pb-total-label">Итого</span>
+          <span class="pb-total-val" id="priceTotal">5 800 сом</span>
+        </div>
+      </div>
+
+      <button class="add-cart-btn" onclick="addToCart()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Добавить в корзину
+      </button>
+      <button class="save-btn">♡ Сохранить дизайн</button>
+    </div>
+
+  </div>
+
+  
+  <div class="how-section">
+    <div style="text-align:center;"><div class="sec-tag" style="display:inline-block;">Как это работает</div></div>
+    <div class="sec-t" style="text-align:center;margin-bottom:0;">Просто и <em>быстро</em></div>
+    <div class="how-grid">
+      <div class="how-item">
+        <div class="how-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <div class="how-t">Настрой онлайн</div>
+        <div class="how-s">Используй конструктор и собери изделие мечты</div>
+      </div>
+      <div class="how-item">
+        <div class="how-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div>
+        <div class="how-t">Оформи заказ</div>
+        <div class="how-s">Оплати удобным способом и получи подтверждение</div>
+      </div>
+      <div class="how-ic-wrap how-item">
+        <div class="how-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div class="how-t">Мастер создаёт</div>
+        <div class="how-s">Наш мастер вручную изготавливает твоё изделие за 2–5 дней</div>
+      </div>
+      <div class="how-item">
+        <div class="how-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="how-t">Доставка</div>
+        <div class="how-s">Получи готовое изделие в удобном месте или самовывозом</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="examples">
+    <div class="sec-hdr" style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:16px;">
+      <div><div class="sec-tag">Вдохновение</div><div class="sec-t">Примеры <em>работ</em></div></div>
+      <span style="font-size:11px;color:var(--tiramisu);border-bottom:1px solid var(--sand);padding-bottom:1px;cursor:pointer;">Смотреть все →</span>
+    </div>
+    <div class="eg">
+      <div class="eg-item"><div class="eg-img" style="background:#E0C8A8;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.3"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></div><div class="eg-info"><div class="eg-name">Сумка «Autumn»</div><div class="eg-desc">Нат. кожа · Инициалы</div></div></div>
+      <div class="eg-item"><div class="eg-img" style="background:#D8C0A0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.3"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 12h.01"/></svg></div><div class="eg-info"><div class="eg-name">Кошелёк «Slim»</div><div class="eg-desc">Замша · Дата</div></div></div>
+      <div class="eg-item"><div class="eg-img" style="background:#C8B888;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.3"><circle cx="12" cy="12" r="9"/></svg></div><div class="eg-info"><div class="eg-name">Браслет «Bohème»</div><div class="eg-desc">Металл + кожа · Имя</div></div></div>
+      <div class="eg-item"><div class="eg-img" style="background:#D0B898;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.3"><rect x="1" y="8" width="22" height="8" rx="2"/></svg></div><div class="eg-info"><div class="eg-name">Ремень «Dusk»</div><div class="eg-desc">Нат. кожа · Монограмма</div></div></div>
+    </div>
+  </div>
+
+  
+  {% include "shop/partials/site_footer.html" %}
+
+</div>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <div class="modal-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3A6020" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h3 id="modalTitle">Добавлено в корзину!</h3>
+    <p id="modalText">Ваш персональный аксессуар добавлен в корзину. Оформите заказ, и наш мастер приступит к работе.</p>
+    <p class="modal-error" id="modalError" style="display:none;color:#8A2A2A;font-size:13px;"></p>
+    <div class="modal-actions" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px;">
+      <a class="modal-btn" id="modalGoToCart" href="{% url 'cart_detail' %}" style="text-decoration:none;display:inline-block;">{% trans "Go to cart" %}</a>
+      <button type="button" class="modal-btn modal-btn-outline" onclick="document.getElementById('modalBg').classList.remove('show')">{% trans "Continue shopping" %}</button>
+    </div>
+  </div>
+</div>
+<form id="csrfForm" style="display:none">{% csrf_token %}</form>
+<script>
+  window.PERSONALIZATION_ADD_URL = "{{ personalization_add_url|escapejs }}";
+  window.CART_DETAIL_URL = "{% url 'cart_detail' %}";
+</script>
+  {% now "U" as static_ver %}
+  <script src="{% static 'shop/js/personalization.js' %}?v={{ static_ver }}"></script>
+</body>
+</html>

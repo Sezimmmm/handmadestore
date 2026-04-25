@@ -1,0 +1,42 @@
+{% load i18n %}
+<div class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a class="footer-brand-row" href="{% url 'home' %}">
+        <div class="logo-square"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+        <span style="font-size:13px;font-weight:500;color:#C8AA8A;font-family:var(--font-serif);">Maison Artisan</span>
+      </a>
+      <div class="footer-description">{% trans "Handmade accessories with personalization. Every piece is unique." %}</div>
+      <div class="footer-social-list">
+        <a class="footer-social-button" href="https://instagram.com/maison.artisan.kg" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a class="footer-social-button" href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a class="footer-social-button" href="https://t.me/maison_artisan" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><path d="M21.44 2L2.06 9.75l7.19 3.16 2.85 7.09L21.44 2z"/><path d="M9.25 12.91l9.19-8.69"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-column-title">{% trans "Catalog" %}</div>
+      <a class="footer-link" href="{% url 'catalog' %}?q=Сумка">{% trans "Bags" %}</a>
+      <a class="footer-link" href="{% url 'catalog' %}?q=Кошелёк">{% trans "Wallets" %}</a>
+      <a class="footer-link" href="{% url 'catalog' %}?q=Украшение">{% trans "Jewelry" %}</a>
+      <a class="footer-link" href="{% url 'catalog' %}?q=Ремень">{% trans "Belts" %}</a>
+    </div>
+    <div>
+      <div class="footer-column-title">{% trans "Help" %}</div>
+      <a class="footer-link" href="{% url 'contacts' %}">{% trans "Delivery" %}</a>
+      <a class="footer-link" href="{% url 'contacts' %}">{% trans "Returns" %}</a>
+      <a class="footer-link" href="{% url 'contacts' %}">{% trans "Payment" %}</a>
+      <a class="footer-link" href="{% url 'contacts' %}#faq">FAQ</a>
+    </div>
+    <div>
+      <div class="footer-column-title">{% trans "Company" %}</div>
+      <a class="footer-link" href="{% url 'about' %}">{% trans "About" %}</a>
+      <a class="footer-link" href="{% url 'about' %}">{% trans "Craftsmen" %}</a>
+      <a class="footer-link" href="{% url 'about' %}">{% trans "Blog" %}</a>
+      <a class="footer-link" href="{% url 'contacts' %}">{% trans "Contacts" %}</a>
+    </div>
+  </div>
+  <div class="footer-bottom-row">
+    <div class="footer-copyright">{% trans "© 2025 Maison Artisan. All rights reserved." %}</div>
+    {% include "shop/partials/language_switcher.html" with variant="footer" %}
+  </div>
+</div>

@@ -1,0 +1,24 @@
+{% load i18n %}
+<div class="header-actions">
+  {% include "shop/partials/language_switcher.html" %}
+  <form class="header-search-form" method="get" action="{% url 'catalog' %}" role="search">
+    <input
+      class="header-search-input"
+      type="search"
+      name="q"
+      value="{{ request.GET.q|default:'' }}"
+      placeholder="{% trans 'Search' %}"
+      autocomplete="off"
+    >
+    <button class="icon-button" type="submit" aria-label="{% trans 'Search' %}">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </button>
+  </form>
+  <a class="icon-button" id="headerCartLink" href="{% url 'cart_detail' %}" title="{% trans 'Cart' %}" aria-label="{% trans 'Cart' %}">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    {% if cart_count %}<span class="badge-count">{{ cart_count }}</span>{% endif %}
+  </a>
+  <a class="icon-button" href="{% url 'account' %}" title="{% trans 'Account' %}" aria-label="{% trans 'Account' %}">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+  </a>
+</div>

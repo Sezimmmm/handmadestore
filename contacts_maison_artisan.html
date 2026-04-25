@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакты — Maison Artisan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Pantone palette:
+   Tiramisu      #6B3A2A
+   Bleached Sand #C8AA8A
+   Coconut Milk  #F0EBE0
+   Mid brown     #A07850
+   Text dark     #2A1A10
+*/
+:root{
+  --tiramisu:#6B3A2A;
+  --sand:#C8AA8A;
+  --cream:#F0EBE0;
+  --mid:#A07850;
+  --dark:#2A1A10;
+  --dark2:#3A2418;
+  --dark3:#2A1A10;
+  --border:#DDD0C0;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Jost',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-sans);background:#F5F0E8;color:var(--dark);}
+a{text-decoration:none;color:inherit;}
+
+/* PAGE WRAPPER */
+.pg{width:100%;max-width:900px;margin:0 auto;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+
+/* ── HEADER (same as main) ── */
+.hdr{background:var(--cream);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.logo-wrap{display:flex;align-items:center;gap:10px;}
+.logo-sq{width:30px;height:30px;border-radius:6px;background:var(--tiramisu);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-name{font-size:14px;font-weight:500;color:var(--dark);font-family:var(--font-serif);}
+.nav{display:flex;gap:20px;}
+.nl{font-size:12px;color:var(--mid);cursor:pointer;transition:color .2s;}
+.nl:hover{color:var(--tiramisu);}
+.nl.on{color:var(--tiramisu);font-weight:500;border-bottom:1.5px solid var(--tiramisu);padding-bottom:2px;}
+.hdr-r{display:flex;align-items:center;gap:10px;}
+.lb{font-size:10px;color:var(--tiramisu);border:1px solid var(--sand);border-radius:4px;padding:2px 7px;background:var(--cream);cursor:pointer;}
+.ic{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;}
+.bdg{position:absolute;top:-3px;right:-3px;width:13px;height:13px;border-radius:50%;background:var(--tiramisu);font-size:8px;color:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:600;}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{background:var(--cream);padding:10px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;font-size:11px;color:var(--mid);}
+.breadcrumb span.cur{color:var(--tiramisu);font-weight:500;}
+.bc-sep{color:var(--sand);}
+
+/* ── HERO CONTACT ── */
+.chero{background:var(--dark3);padding:40px 44px;position:relative;overflow:hidden;}
+.chero-bg{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(200,170,138,.04) 0,rgba(200,170,138,.04) 1px,transparent 1px,transparent 20px);}
+.chero-content{position:relative;z-index:1;}
+.htag{display:inline-flex;align-items:center;gap:6px;background:var(--tiramisu);color:var(--cream);font-size:10px;padding:4px 12px;border-radius:3px;margin-bottom:14px;letter-spacing:.04em;}
+.htag-dot{width:5px;height:5px;border-radius:50%;background:var(--sand);}
+.chero h1{font-family:var(--font-serif);font-size:30px;font-weight:500;color:var(--cream);line-height:1.25;margin-bottom:8px;}
+.chero h1 em{color:var(--sand);font-style:normal;}
+.chero p{font-size:12px;color:#8A6A50;line-height:1.7;max-width:420px;}
+
+/* ── QUICK CONTACTS (3 cards row) ── */
+.qc-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--border);}
+.qc-item{background:var(--cream);padding:20px 22px;display:flex;align-items:flex-start;gap:12px;border-right:1px solid var(--border);}
+.qc-item:last-child{border-right:none;}
+.qc-ic{width:38px;height:38px;border-radius:7px;background:var(--tiramisu);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.qc-label{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;}
+.qc-val{font-size:13px;font-weight:500;color:var(--dark);font-family:var(--font-serif);}
+.qc-sub{font-size:10px;color:var(--mid);margin-top:2px;}
+
+/* ── MAIN BODY ── */
+.cbody{display:grid;grid-template-columns:1fr 1fr;background:#fff;}
+
+/* ── LEFT — FORM ── */
+.cf{padding:32px 28px;border-right:1px solid var(--border);}
+.sec-tag{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+.sec-t{font-size:17px;font-weight:500;color:var(--dark);font-family:var(--font-serif);margin-bottom:18px;}
+.sec-t em{color:var(--tiramisu);font-style:normal;}
+
+.form-row{margin-bottom:14px;}
+.form-row label{display:block;font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;}
+.form-row input,
+.form-row textarea,
+.form-row select{width:100%;background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:9px 12px;font-size:12px;font-family:var(--font-sans);color:var(--dark);outline:none;transition:border-color .2s;}
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus{border-color:var(--sand);}
+.form-row textarea{resize:vertical;min-height:90px;line-height:1.6;}
+.form-row select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23A07850' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;}
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.submit-btn{width:100%;background:var(--tiramisu);color:var(--cream);font-size:12px;font-weight:500;padding:12px;border-radius:6px;border:none;cursor:pointer;font-family:var(--font-sans);letter-spacing:.04em;transition:background .2s;margin-top:6px;}
+.submit-btn:hover{background:#7A4A34;}
+.form-note{font-size:10px;color:var(--mid);margin-top:8px;line-height:1.5;}
+
+/* ── RIGHT — INFO ── */
+.cinfo{padding:32px 28px;}
+
+/* Hours */
+.hours-block{margin-bottom:24px;}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);}
+.hours-row:last-child{border-bottom:none;}
+.hr-day{font-size:11px;color:var(--dark);}
+.hr-time{font-size:11px;color:var(--mid);}
+.hr-badge{font-size:9px;background:#E8D8C0;color:var(--tiramisu);padding:2px 6px;border-radius:3px;font-weight:500;}
+
+/* Map placeholder */
+.map-block{margin-bottom:24px;}
+.map-box{height:130px;background:linear-gradient(135deg,#E0D0B8 0%,#C8B898 50%,#D8C8A8 100%);border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.map-overlay{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(107,58,42,.04) 0,rgba(107,58,42,.04) 1px,transparent 1px,transparent 16px),repeating-linear-gradient(90deg,rgba(107,58,42,.04) 0,rgba(107,58,42,.04) 1px,transparent 1px,transparent 16px);}
+.map-pin{width:32px;height:32px;border-radius:50% 50% 50% 0;background:var(--tiramisu);transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(107,58,42,.3);position:relative;z-index:1;}
+.map-pin-inner{width:10px;height:10px;border-radius:50%;background:var(--cream);transform:rotate(45deg);}
+.map-addr{position:absolute;bottom:10px;left:10px;background:rgba(42,26,16,.75);color:var(--cream);font-size:9px;padding:3px 9px;border-radius:3px;z-index:1;}
+.map-link{display:block;font-size:10px;color:var(--tiramisu);border-bottom:1px solid var(--sand);padding-bottom:1px;width:fit-content;margin-top:8px;cursor:pointer;}
+
+/* Social */
+.social-block{}
+.soc-row{display:flex;gap:8px;margin-top:10px;}
+.soc-btn{display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--border);border-radius:6px;background:var(--cream);cursor:pointer;transition:border-color .2s;}
+.soc-btn:hover{border-color:var(--sand);}
+.soc-ic{width:28px;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;}
+.soc-name{font-size:11px;color:var(--dark);font-weight:500;}
+.soc-sub{font-size:9px;color:var(--mid);}
+
+/* ── FAQ ── */
+.faq{padding:28px;background:var(--cream);border-top:1px solid var(--border);}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px 16px;cursor:pointer;}
+.faq-q{font-size:11px;font-weight:500;color:var(--dark);margin-bottom:4px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+.faq-q svg{flex-shrink:0;opacity:.4;}
+.faq-a{font-size:10px;color:var(--mid);line-height:1.6;}
+
+/* ── FOOTER (same as main) ── */
+.ftr{background:var(--dark3);padding:30px 28px;}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:20px;margin-bottom:18px;}
+.fl{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.fd2{font-size:11px;color:#5A3A28;line-height:1.6;margin-bottom:13px;}
+.soc{display:flex;gap:7px;}
+.sb{width:28px;height:28px;border-radius:5px;border:1px solid var(--dark2);background:var(--dark2);display:flex;align-items:center;justify-content:center;}
+.fct{font-size:12px;font-weight:500;color:var(--sand);margin-bottom:9px;font-family:var(--font-serif);}
+.flnk{font-size:11px;color:#5A3A28;display:block;margin-bottom:5px;cursor:pointer;}
+.fbot{border-top:1px solid var(--dark2);padding-top:14px;display:flex;align-items:center;justify-content:space-between;}
+.fcp{font-size:10px;color:var(--dark2);}
+.fls{display:flex;gap:6px;}
+.flb{font-size:10px;color:#5A3A28;border:1px solid var(--dark2);border-radius:3px;padding:2px 7px;cursor:pointer;}
+.flb.on{color:var(--sand);border-color:var(--sand);}
+
+/* success toast */
+.toast{display:none;margin-top:12px;background:#E8F5E0;border:1px solid #A8D890;border-radius:6px;padding:10px 14px;font-size:11px;color:#3A6020;}
+</style>
+</head>
+<body>
+<div class="pg">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="logo-wrap">
+      <div class="logo-sq">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="logo-name">Maison Artisan</span>
+    </div>
+    <div class="nav">
+      <span class="nl">Главная</span>
+      <span class="nl">Каталог</span>
+      <span class="nl">Персонализация</span>
+      <span class="nl">О нас</span>
+      <span class="nl on">Контакты</span>
+    </div>
+    <div class="hdr-r">
+      <span class="lb">RU ▾</span>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><div class="bdg">2</div></div>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <span>Главная</span>
+    <span class="bc-sep">›</span>
+    <span class="cur">Контакты</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="chero">
+    <div class="chero-bg"></div>
+    <div class="chero-content">
+      <div class="htag"><div class="htag-dot"></div>Мы всегда на связи</div>
+      <h1>Свяжитесь <em>с нами</em></h1>
+      <p>Есть вопрос по заказу, хотите оформить персонализацию или просто хотите познакомиться с нашей мастерской — пишите, звоните, приходите.</p>
+    </div>
+  </div>
+
+  <!-- QUICK CONTACTS -->
+  <div class="qc-row">
+    <div class="qc-item">
+      <div class="qc-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.2 6.2l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div>
+        <div class="qc-label">Телефон</div>
+        <div class="qc-val">+996 700 123 456</div>
+        <div class="qc-sub">Пн–Сб, 10:00–19:00</div>
+      </div>
+    </div>
+    <div class="qc-item">
+      <div class="qc-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div>
+        <div class="qc-label">Email</div>
+        <div class="qc-val">hello@maison-artisan.kg</div>
+        <div class="qc-sub">Ответим в течение дня</div>
+      </div>
+    </div>
+    <div class="qc-item">
+      <div class="qc-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div>
+        <div class="qc-label">Адрес</div>
+        <div class="qc-val">Бишкек, ул. Киевская 96</div>
+        <div class="qc-sub">ТЦ «Артем», 2 этаж, бутик 12</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN BODY -->
+  <div class="cbody">
+
+    <!-- LEFT: FORM -->
+    <div class="cf">
+      <div class="sec-tag">Написать нам</div>
+      <div class="sec-t">Форма <em>обратной связи</em></div>
+
+      <div class="form-2col">
+        <div class="form-row">
+          <label>Ваше имя</label>
+          <input type="text" placeholder="Айгуль">
+        </div>
+        <div class="form-row">
+          <label>Телефон / Email</label>
+          <input type="text" placeholder="+996 700 ...">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Тема обращения</label>
+        <select>
+          <option value="" disabled selected>Выберите тему</option>
+          <option>Вопрос по заказу</option>
+          <option>Персонализация товара</option>
+          <option>Доставка и оплата</option>
+          <option>Возврат / обмен</option>
+          <option>Сотрудничество</option>
+          <option>Другое</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Сообщение</label>
+        <textarea placeholder="Расскажите, чем мы можем помочь..."></textarea>
+      </div>
+
+      <button class="submit-btn" onclick="sendForm()">Отправить сообщение</button>
+      <div class="toast" id="toast">✓ Спасибо! Ваше сообщение отправлено. Мы ответим в течение рабочего дня.</div>
+      <div class="form-note">Нажимая «Отправить», вы соглашаетесь с политикой конфиденциальности.</div>
+    </div>
+
+    <!-- RIGHT: INFO -->
+    <div class="cinfo">
+
+      <!-- Hours -->
+      <div class="hours-block">
+        <div class="sec-tag">График работы</div>
+        <div class="sec-t" style="margin-bottom:10px;">Мы <em>открыты</em></div>
+        <div class="hours-row">
+          <span class="hr-day">Понедельник — Пятница</span>
+          <div style="display:flex;align-items:center;gap:6px;"><span class="hr-time">10:00 — 19:00</span><span class="hr-badge">Работаем</span></div>
+        </div>
+        <div class="hours-row">
+          <span class="hr-day">Суббота</span>
+          <span class="hr-time">11:00 — 17:00</span>
+        </div>
+        <div class="hours-row">
+          <span class="hr-day">Воскресенье</span>
+          <span class="hr-time" style="color:#C8706A;">Выходной</span>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-block">
+        <div class="sec-tag">Адрес</div>
+        <div class="sec-t" style="margin-bottom:10px;">Найти нас <em>на карте</em></div>
+        <div class="map-box">
+          <div class="map-overlay"></div>
+          <div class="map-pin"><div class="map-pin-inner"></div></div>
+          <div class="map-addr">Киевская 96, ТЦ «Артем»</div>
+        </div>
+        <span class="map-link">Открыть в 2GIS →</span>
+      </div>
+
+      <!-- Social -->
+      <div class="social-block">
+        <div class="sec-tag">Соцсети</div>
+        <div class="sec-t" style="margin-bottom:10px;">Мы в <em>Instagram & Telegram</em></div>
+        <div class="soc-row">
+          <div class="soc-btn">
+            <div class="soc-ic" style="background:#E8D8C8;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div><div class="soc-name">Instagram</div><div class="soc-sub">@maison.artisan.kg</div></div>
+          </div>
+          <div class="soc-btn">
+            <div class="soc-ic" style="background:#D8EAF0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2A6A8A" stroke-width="1.5"><path d="M21.44 2L2.06 9.75l7.19 3.16 2.85 7.09L21.44 2z"/><path d="M9.25 12.91l9.19-8.69"/></svg>
+            </div>
+            <div><div class="soc-name">Telegram</div><div class="soc-sub">@maison_artisan</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <div style="text-align:center;margin-bottom:4px;"><div class="sec-tag" style="display:inline-block;">Частые вопросы</div></div>
+    <div class="sec-t" style="text-align:center;margin-bottom:0;">Ответы на <em>вопросы</em></div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Сколько занимает персонализация?
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="faq-a">Обычно 2–5 рабочих дней в зависимости от типа изделия и сложности гравировки.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Можно ли вернуть персонализированный товар?
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="faq-a">Персонализированные изделия возврату не подлежат, если дефект не является заводским браком.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Есть ли доставка в другие города?
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="faq-a">Да, доставляем по всему Кыргызстану через SALAM и Достук Доставка, а также на Wildberries KG.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как оплатить заказ?
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="faq-a">Принимаем Mbank, O!Money, Элcом, наличные в точке выдачи и банковские карты.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ftr">
+    <div class="fg">
+      <div>
+        <div class="fl">
+          <div class="logo-sq"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+          <span style="font-size:13px;font-weight:500;color:#C8AA8A;font-family:'Playfair Display',serif;">Maison Artisan</span>
+        </div>
+        <div class="fd2">Брендовые аксессуары ручной работы с персонализацией. Каждое изделие уникально.</div>
+        <div class="soc">
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><path d="M21.44 2L2.06 9.75l7.19 3.16 2.85 7.09L21.44 2z"/></svg></div>
+        </div>
+      </div>
+      <div><div class="fct">Каталог</div><span class="flnk">Сумки</span><span class="flnk">Кошельки</span><span class="flnk">Украшения</span><span class="flnk">Ремни</span></div>
+      <div><div class="fct">Помощь</div><span class="flnk">Доставка</span><span class="flnk">Возврат</span><span class="flnk">Оплата</span><span class="flnk">FAQ</span></div>
+      <div><div class="fct">Компания</div><span class="flnk">О нас</span><span class="flnk">Мастера</span><span class="flnk">Блог</span><span class="flnk">Контакты</span></div>
+    </div>
+    <div class="fbot">
+      <div class="fcp">© 2025 Maison Artisan. Все права защищены.</div>
+      <div class="fls"><span class="flb on">RU</span><span class="flb">EN</span><span class="flb">KG</span></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function sendForm(){
+  const toast = document.getElementById('toast');
+  toast.style.display = 'block';
+  setTimeout(()=>{ toast.style.display='none'; }, 5000);
+}
+</script>
+</body>
+</html>

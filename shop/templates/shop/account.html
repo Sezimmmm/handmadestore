@@ -1,0 +1,41 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% trans "Account" %} — Maison Artisan</title>
+<link rel="icon" type="image/svg+xml" href="{% static 'shop/favicon.svg' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/css/account.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/common.css' %}">
+</head>
+<body>
+<div class="page-container">
+  <div class="site-header">
+    <a class="logo-wrap" href="{% url 'home' %}">
+      <div class="logo-square">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="logo-title">Maison Artisan</span>
+    </a>
+    {% include "shop/partials/site_nav.html" %}
+    {% include "shop/partials/header_actions.html" %}
+  </div>
+
+  <div class="breadcrumb-bar">
+    <a class="breadcrumb-link" href="{% url 'home' %}">{% trans "Home" %}</a>
+    <span class="breadcrumb-separator">›</span>
+    <span class="breadcrumb-link is-current">{% trans "Account" %}</span>
+  </div>
+
+  <main class="account-main">
+    <h1 class="account-title">{% trans "My account" %}</h1>
+    <p class="account-lead">{% trans "This section is under construction. You can place orders via the cart and checkout without signing in." %}</p>
+    <p class="account-links"><a href="{% url 'cart_detail' %}">{% trans "Cart" %}</a> · <a href="{% url 'catalog' %}">{% trans "Catalog" %}</a> · <a href="{% url 'contacts' %}">{% trans "Contacts" %}</a></p>
+  </main>
+</div>
+</body>
+</html>

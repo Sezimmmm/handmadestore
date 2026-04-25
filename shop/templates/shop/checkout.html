@@ -1,0 +1,85 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% trans "Checkout" %} — Maison Artisan</title>
+  <link rel="icon" type="image/svg+xml" href="{% static 'shop/favicon.svg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/css/catalog.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/common.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/cart.css' %}">
+</head>
+<body>
+<div class="page-container">
+  <div class="site-header">
+    <a class="logo-wrap" href="{% url 'home' %}">
+      <div class="logo-square">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="logo-title">Maison Artisan</span>
+    </a>
+    {% include "shop/partials/site_nav.html" %}
+    {% include "shop/partials/header_actions.html" %}
+  </div>
+
+  <div class="cart-page">
+    <div class="cart-header checkout-page-header">
+      <h1>{% trans "Checkout" %}</h1>
+      <div class="cart-header-actions">
+        <a href="{% url 'cart_detail' %}">← {% trans "Back to cart" %}</a>
+      </div>
+    </div>
+    {% if cart_items %}
+      <form method="post" class="cart-grid">
+        {% csrf_token %}
+        <div class="cart-items">
+          {% for item in cart_items %}
+            <div class="cart-item">
+              <div class="cart-item-info">
+                <div class="cart-category">{{ item.product.category.name }}</div>
+                <div class="cart-name">{{ item.product.name }}</div>
+                {% if item.is_builder %}
+                  <div class="cart-meta cart-builder-spec">
+                    {% for line in item.builder_lines %}<div>{{ line }}</div>{% endfor %}
+                  </div>
+                {% else %}
+                  {% if item.variant %}
+                    <div class="cart-variant-row">
+                      <span class="variant-pill" style="--swatch: {{ item.variant.color_hex }}">{{ item.variant.color_name }}</span>
+                    </div>
+                  {% endif %}
+                  <div class="cart-meta">{{ item.product.material }}</div>
+                {% endif %}
+              </div>
+              <div class="cart-item-price">{{ item.quantity }} {% trans "pcs." %}</div>
+              <div class="cart-item-subtotal">{{ item.subtotal }} {% trans "KGS" %}</div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="cart-summary">
+          <div class="summary-title">{% trans "Customer details" %}</div>
+          <div class="checkout-form-field"><input name="full_name" placeholder="{% trans 'Full name' %}" required></div>
+          <div class="checkout-form-field"><input name="phone" placeholder="{% trans 'Phone' %}" required></div>
+          <div class="checkout-form-field"><input name="email" placeholder="Email"></div>
+          <div class="checkout-form-field"><input name="address" placeholder="{% trans 'Delivery address' %}" required></div>
+          <div class="checkout-form-field"><textarea name="comment" placeholder="{% trans 'Order comment' %}"></textarea></div>
+          <div class="summary-row total"><span>{% trans "Total" %}</span><span>{{ cart_total }} {% trans "KGS" %}</span></div>
+          <button class="checkout-btn" type="submit">{% trans "Confirm order" %}</button>
+        </div>
+      </form>
+    {% else %}
+      <div class="cart-empty">
+        <p>{% trans "Cart is empty — nothing to checkout." %}</p>
+        <a href="{% url 'catalog' %}">{% trans "Browse catalog" %}</a>
+      </div>
+    {% endif %}
+  </div>
+
+  {% include "shop/partials/site_footer.html" %}
+</div>
+</body>
+</html>

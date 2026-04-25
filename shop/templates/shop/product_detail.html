@@ -1,0 +1,103 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ product.name }} — Maison Artisan</title>
+  <link rel="icon" type="image/svg+xml" href="{% static 'shop/favicon.svg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'shop/css/product_detail.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/common.css' %}">
+</head>
+<body>
+  <div class="page-container">
+    <div class="site-header">
+      <a class="logo-wrap" href="{% url 'home' %}">
+        <div class="logo-square">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <span class="logo-title">Maison Artisan</span>
+      </a>
+      {% include "shop/partials/site_nav.html" %}
+      {% include "shop/partials/header_actions.html" %}
+    </div>
+
+    <div class="breadcrumb-bar">
+      <a class="breadcrumb-link" href="{% url 'home' %}">{% trans "Home" %}</a>
+      <span class="cr-sep">›</span>
+      <a class="breadcrumb-link" href="{% url 'catalog' %}">{% trans "Catalog" %}</a>
+      <span class="cr-sep">›</span>
+      <span class="breadcrumb-link is-current">{{ product.name }}</span>
+    </div>
+
+    <div class="detail">
+      <div class="media">
+        {% if primary_product_image_url %}
+          <img id="pd-main-img" src="{{ primary_product_image_url }}" alt="{{ product.name }}">
+        {% else %}
+          <div class="placeholder" id="pd-main-img-ph">{% trans "Product photo" %}</div>
+        {% endif %}
+      </div>
+
+      <div class="info">
+        <div class="cat">{{ product.category.name }}</div>
+        <h1>{{ product.name }}</h1>
+        <p class="material">{% if product.material %}{{ product.material }}{% else %}{% trans "Material to be confirmed" %}{% endif %}</p>
+        <p class="desc">{% if product.description %}{{ product.description }}{% else %}{% trans "Description will appear soon. The item is already available for personalization and order." %}{% endif %}</p>
+
+        <div class="price-row">
+          <span class="price">{{ product.price }} {% trans "KGS" %}</span>
+          {% if product.old_price %}
+            <span class="old-price">{{ product.old_price }} {% trans "KGS" %}</span>
+          {% endif %}
+        </div>
+
+        <div class="meta">{% trans "Reviews" %}: {{ product.reviews_count }}</div>
+
+        <div class="colors">
+          <span>{% trans "Color" %}: <strong id="pd-color-label">{{ default_variant_name|default:"—" }}</strong></span>
+          <div class="dots" role="group" aria-label="{% trans 'Product color' %}">
+            {% for row in variant_rows %}
+            <button type="button" class="dot pd-variant {% if row.default %}sel{% endif %}" style="background: {{ row.hex }};" title="{{ row.name }}" aria-label="{{ row.name }}" aria-pressed="{% if row.default %}true{% else %}false{% endif %}" data-variant-id="{{ row.id }}" data-image-url="{{ row.url }}" data-color-name="{{ row.name }}" data-alt="{{ product.name }} — {{ row.name }}"></button>
+            {% empty %}
+            {% for variant in product.variants.all %}
+            <span class="dot {% if variant.is_default %}sel{% endif %}" style="background: {{ variant.color_hex }};" title="{{ variant.color_name }}"></span>
+            {% empty %}
+            <span class="dot sel" style="background:#C8AA8A;"></span>
+            {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="actions">
+          {% url 'product_detail' product.slug as pd_next %}
+          <a id="add-to-cart" class="btn btn-primary" data-cart-add="{% url 'cart_add' product.slug %}" data-next="{{ pd_next }}" href="{% url 'cart_add' product.slug %}?{% if default_variant_id %}variant={{ default_variant_id }}&{% endif %}next={{ pd_next|urlencode }}">{% trans "Add to cart" %}</a>
+          <a class="btn btn-outline" href="{% url 'catalog' %}">{% trans "Back to catalog" %}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="related">
+      <h2>{% trans "Related products" %}</h2>
+      <div class="related-grid">
+        {% for item in related_products %}
+          <a class="r-card" href="{% url 'product_detail' item.slug %}">
+            <div class="r-photo {{ item.card_color_class }}"></div>
+            <div class="r-name">{{ item.name }}</div>
+            <div class="r-price">{{ item.price }} {% trans "KGS" %}</div>
+          </a>
+        {% empty %}
+          <div class="empty">{% trans "No related products yet." %}</div>
+        {% endfor %}
+      </div>
+    </div>
+  {% include "shop/partials/site_footer.html" %}
+  </div>
+  {% if variant_rows %}
+  <script src="{% static 'shop/js/product_detail.js' %}" defer></script>
+  {% endif %}
+</body>
+</html>

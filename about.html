@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>О нас — Maison Artisan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS VARS ===== */
+:root{
+  --tiramisu:#6B3A2A;
+  --sand:#C8AA8A;
+  --cream:#F0EBE0;
+  --mid:#A07850;
+  --dark:#2A1A10;
+  --border:#DDD0C0;
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  --font-sans:'Jost',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#EEECE6;font-family:var(--font-sans);}
+
+.pg{width:100%;max-width:900px;margin:0 auto;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+
+/* ===== HEADER (same as main page) ===== */
+.hdr{background:var(--cream);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.logo-wrap{display:flex;align-items:center;gap:10px;}
+.logo-sq{width:30px;height:30px;border-radius:6px;background:var(--tiramisu);display:flex;align-items:center;justify-content:center;}
+.logo-name{font-size:14px;font-weight:500;color:var(--dark);font-family:var(--font-serif);}
+.nav{display:flex;gap:20px;}
+.nl{font-size:12px;color:var(--mid);cursor:pointer;}
+.nl.on{color:var(--tiramisu);font-weight:500;border-bottom:1.5px solid var(--tiramisu);padding-bottom:2px;}
+.hdr-r{display:flex;align-items:center;gap:10px;}
+.lb{font-size:10px;color:var(--tiramisu);border:1px solid var(--sand);border-radius:4px;padding:2px 7px;background:var(--cream);}
+.ic{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;position:relative;}
+.bdg{position:absolute;top:-3px;right:-3px;width:13px;height:13px;border-radius:50%;background:var(--tiramisu);font-size:8px;color:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:600;}
+
+/* ===== BREADCRUMB ===== */
+.crumb{background:var(--cream);padding:10px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+.cr{font-size:11px;color:var(--mid);}
+.cr.cur{color:var(--tiramisu);font-weight:500;}
+.cr-sep{font-size:11px;color:var(--border);}
+
+/* ===== HERO ABOUT ===== */
+.ab-hero{background:var(--dark);padding:56px 44px 0;position:relative;overflow:hidden;display:flex;gap:36px;align-items:flex-end;}
+.ab-hero-bg{position:absolute;inset:0;opacity:.07;background-image:repeating-linear-gradient(45deg,var(--sand) 0,var(--sand) 1px,transparent 0,transparent 50%);background-size:18px 18px;}
+.ab-hero-left{position:relative;z-index:1;flex:1;padding-bottom:44px;}
+.ab-tag{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(200,170,138,.3);color:var(--sand);font-size:10px;padding:4px 12px;border-radius:3px;margin-bottom:18px;letter-spacing:.06em;font-family:var(--font-sans);}
+.ab-h1{font-size:38px;font-weight:500;color:var(--cream);line-height:1.18;margin-bottom:14px;font-family:var(--font-serif);}
+.ab-h1 em{color:var(--sand);font-style:italic;}
+.ab-sub{font-size:12px;color:#8A6A50;line-height:1.7;max-width:340px;margin-bottom:28px;}
+.ab-stats{display:flex;gap:28px;}
+.ab-stat{}
+.ab-num{font-size:28px;font-weight:500;color:var(--sand);font-family:var(--font-serif);line-height:1;}
+.ab-slabel{font-size:10px;color:#6A4A35;margin-top:3px;letter-spacing:.05em;}
+.ab-hero-right{position:relative;z-index:1;width:220px;flex-shrink:0;}
+.ab-hero-img{width:100%;height:240px;background:#3A2418;border-radius:10px 10px 0 0;border:1px solid #4A2D1A;border-bottom:none;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.ab-hero-img-inner{text-align:center;}
+.ab-hero-img-ph{width:60px;height:60px;border-radius:8px;border:2px dashed #5A3828;margin:0 auto 8px;}
+.ab-hero-img-lbl{font-size:10px;color:#5A3828;}
+/* Pantone deco */
+.pant{position:absolute;bottom:10px;left:10px;background:#fff;border:1px solid var(--border);border-radius:3px;padding:5px 8px;width:68px;}
+.pant-sw{width:100%;height:16px;border-radius:2px;margin-bottom:3px;}
+.pant-brand{font-size:7px;font-weight:500;color:var(--dark);letter-spacing:.08em;}
+.pant-code{font-size:6px;color:var(--mid);}
+.pant-name{font-size:7px;font-weight:500;color:var(--dark);}
+
+/* ===== STORY SECTION ===== */
+.story{background:#fff;padding:40px 28px;}
+.sec-tag{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+.sec-t{font-size:20px;font-weight:500;color:var(--dark);font-family:var(--font-serif);margin-bottom:20px;}
+.sec-t em{color:var(--tiramisu);font-style:normal;}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+.story-text p{font-size:12px;color:#7A5A40;line-height:1.8;margin-bottom:14px;}
+.story-text p:last-child{margin-bottom:0;}
+.story-text strong{color:var(--dark);font-weight:500;}
+.story-img-col{display:flex;flex-direction:column;gap:10px;}
+.si1{height:150px;background:#E8D8C0;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.si2{height:100px;background:#D8C8A0;border-radius:10px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+.si-ph{text-align:center;}
+.si-box{width:36px;height:36px;border-radius:6px;border:2px dashed var(--sand);margin:0 auto 5px;}
+.si-lbl{font-size:9px;color:var(--sand);}
+.quote-strip{margin-top:22px;background:var(--cream);border-left:3px solid var(--tiramisu);border-radius:0 8px 8px 0;padding:14px 18px;}
+.q-text{font-size:14px;font-style:italic;color:var(--dark);font-family:var(--font-serif);line-height:1.5;margin-bottom:6px;}
+.q-author{font-size:10px;color:var(--mid);letter-spacing:.04em;}
+
+/* ===== VALUES ===== */
+.values{background:var(--cream);padding:36px 28px;}
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
+.val-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px 16px;position:relative;overflow:hidden;}
+.val-num{position:absolute;top:12px;right:14px;font-size:32px;font-weight:500;color:var(--cream);font-family:var(--font-serif);line-height:1;user-select:none;}
+.val-ic{width:38px;height:38px;border-radius:8px;background:var(--tiramisu);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.val-t{font-size:13px;font-weight:500;color:var(--dark);margin-bottom:5px;font-family:var(--font-serif);}
+.val-s{font-size:11px;color:#7A5A40;line-height:1.6;}
+
+/* ===== TEAM ===== */
+.team{background:#fff;padding:36px 28px;}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
+.tm-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#FAF7F3;}
+.tm-photo{height:110px;display:flex;align-items:center;justify-content:center;position:relative;}
+.tm-ava{width:52px;height:52px;border-radius:50%;border:2.5px solid var(--sand);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;font-family:var(--font-serif);}
+.tm-info{padding:12px;background:#fff;}
+.tm-name{font-size:12px;font-weight:500;color:var(--dark);font-family:var(--font-serif);}
+.tm-role{font-size:10px;color:var(--mid);margin-top:2px;margin-bottom:6px;}
+.tm-desc{font-size:10px;color:#7A5A40;line-height:1.5;}
+.tm-badge{position:absolute;top:8px;right:8px;background:var(--tiramisu);color:var(--cream);font-size:8px;padding:2px 7px;border-radius:3px;letter-spacing:.04em;}
+.t1{background:#E8D8C0;} .t2{background:#D8C8A8;} .t3{background:#E0D0B8;}
+.t4{background:#D0C0A0;} .t5{background:#C8B898;} .t6{background:#DDD0B8;}
+
+/* ===== TIMELINE ===== */
+.timeline{background:var(--dark);padding:40px 28px;}
+.tl-header .sec-tag{color:#6A4A35;}
+.tl-header .sec-t{color:var(--cream);}
+.tl-header .sec-t em{color:var(--sand);}
+.tl{display:flex;flex-direction:column;gap:0;margin-top:22px;position:relative;}
+.tl::before{content:'';position:absolute;left:52px;top:0;bottom:0;width:1px;background:#3A2418;}
+.tl-item{display:flex;gap:16px;align-items:flex-start;padding-bottom:26px;position:relative;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-year{min-width:44px;font-size:13px;font-weight:500;color:var(--sand);font-family:var(--font-serif);text-align:right;padding-top:2px;}
+.tl-dot{width:18px;height:18px;border-radius:4px;background:var(--tiramisu);border:2px solid #5A3020;flex-shrink:0;margin-top:1px;position:relative;z-index:1;}
+.tl-dot.active{background:var(--sand);}
+.tl-content{}
+.tl-t{font-size:12px;font-weight:500;color:var(--cream);margin-bottom:4px;}
+.tl-s{font-size:11px;color:#6A4A35;line-height:1.6;}
+
+/* ===== NUMBERS BANNER ===== */
+.nums{background:var(--tiramisu);padding:32px 28px;}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px;}
+.num-card{text-align:center;padding:20px 10px;background:rgba(0,0,0,.12);border-radius:8px;border:1px solid rgba(200,170,138,.2);}
+.num-big{font-size:32px;font-weight:500;color:var(--cream);font-family:var(--font-serif);line-height:1;}
+.num-unit{font-size:13px;color:var(--sand);font-family:var(--font-serif);}
+.num-lbl{font-size:10px;color:rgba(200,170,138,.6);margin-top:5px;letter-spacing:.05em;}
+.nums .sec-tag{color:rgba(200,170,138,.5);}
+.nums .sec-t{color:var(--cream);}
+.nums .sec-t em{color:var(--sand);}
+
+/* ===== PRODUCTION ===== */
+.prod-sec{background:var(--cream);padding:36px 28px;}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.prod-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;gap:0;}
+.prod-img{width:72px;flex-shrink:0;background:var(--sand);display:flex;align-items:center;justify-content:center;}
+.prod-img svg{opacity:.5;}
+.prod-body{padding:14px;}
+.prod-title{font-size:12px;font-weight:500;color:var(--dark);margin-bottom:5px;font-family:var(--font-serif);}
+.prod-desc{font-size:11px;color:#7A5A40;line-height:1.6;}
+.prod-tag{display:inline-block;margin-top:7px;font-size:9px;background:var(--cream);color:var(--tiramisu);border:1px solid var(--border);border-radius:3px;padding:2px 7px;letter-spacing:.04em;}
+.pi1b{background:#E8D8C0;}.pi2b{background:#D8C8A8;}.pi3b{background:#DDD0B8;}.pi4b{background:#C8B898;}
+
+/* ===== CTA ===== */
+.cta{background:#fff;padding:44px 28px;text-align:center;border-top:1px solid var(--border);}
+.cta-tag{display:inline-flex;align-items:center;gap:6px;background:var(--cream);color:var(--mid);font-size:10px;padding:4px 14px;border-radius:3px;margin-bottom:14px;letter-spacing:.06em;border:1px solid var(--border);}
+.cta-h{font-size:26px;font-weight:500;color:var(--dark);font-family:var(--font-serif);margin-bottom:10px;}
+.cta-h em{color:var(--tiramisu);font-style:italic;}
+.cta-sub{font-size:12px;color:#7A5A40;max-width:380px;margin:0 auto 24px;line-height:1.7;}
+.cta-btns{display:flex;justify-content:center;gap:12px;}
+.bp{background:var(--tiramisu);color:var(--cream);font-size:11px;font-weight:500;padding:11px 26px;border-radius:4px;letter-spacing:.03em;cursor:pointer;}
+.bo{border:1.5px solid var(--sand);color:var(--tiramisu);font-size:11px;padding:11px 26px;border-radius:4px;cursor:pointer;}
+
+/* ===== FOOTER ===== */
+.ftr{background:var(--dark);padding:30px 28px;}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:20px;margin-bottom:18px;}
+.fl{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.fd2{font-size:11px;color:#5A3A28;line-height:1.6;margin-bottom:13px;}
+.soc{display:flex;gap:7px;}
+.sb{width:28px;height:28px;border-radius:5px;border:1px solid #3A2418;background:#3A2418;display:flex;align-items:center;justify-content:center;}
+.fct{font-size:12px;font-weight:500;color:var(--sand);margin-bottom:9px;font-family:var(--font-serif);}
+.flnk{font-size:11px;color:#5A3A28;display:block;margin-bottom:5px;}
+.fbot{border-top:1px solid #3A2418;padding-top:14px;display:flex;align-items:center;justify-content:space-between;}
+.fcp{font-size:10px;color:#3A2418;}
+.fls{display:flex;gap:6px;}
+.flb{font-size:10px;color:#5A3A28;border:1px solid #3A2418;border-radius:3px;padding:2px 7px;}
+.flb.on{color:var(--sand);border-color:var(--sand);}
+</style>
+</head>
+<body>
+<div class="pg">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="logo-wrap">
+      <div class="logo-sq">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <span class="logo-name">Maison Artisan</span>
+    </div>
+    <div class="nav">
+      <span class="nl">Главная</span>
+      <span class="nl">Каталог</span>
+      <span class="nl">Персонализация</span>
+      <span class="nl on">О нас</span>
+      <span class="nl">Контакты</span>
+    </div>
+    <div class="hdr-r">
+      <span class="lb">RU ▾</span>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><div class="bdg">2</div></div>
+      <div class="ic"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="crumb">
+    <span class="cr">Главная</span>
+    <span class="cr-sep">›</span>
+    <span class="cr cur">О нас</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="ab-hero">
+    <div class="ab-hero-bg"></div>
+    <div class="ab-hero-left">
+      <div class="ab-tag">● Наша история</div>
+      <div class="ab-h1">Мы создаём<br><em>не просто вещи —</em><br>мы создаём смысл</div>
+      <div class="ab-sub">Maison Artisan — это мастерская, где каждый аксессуар рождается вручную. Мы верим, что настоящий стиль начинается с деталей.</div>
+      <div class="ab-stats">
+        <div class="ab-stat"><div class="ab-num">2019</div><div class="ab-slabel">Год основания</div></div>
+        <div class="ab-stat"><div class="ab-num">1 200+</div><div class="ab-slabel">Изделий создано</div></div>
+        <div class="ab-stat"><div class="ab-num">8</div><div class="ab-slabel">Мастеров в команде</div></div>
+      </div>
+    </div>
+    <div class="ab-hero-right">
+      <div class="ab-hero-img">
+        <div class="ab-hero-img-inner">
+          <div class="ab-hero-img-ph"></div>
+          <div class="ab-hero-img-lbl">Фото мастерской</div>
+        </div>
+        <div class="pant">
+          <div class="pant-sw" style="background:#C8AA8A;"></div>
+          <div class="pant-brand">PANTONE®</div>
+          <div class="pant-code">15-1116 TCX</div>
+          <div class="pant-name">Bleached Sand</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <div class="story">
+    <div class="sec-tag">Откуда мы</div>
+    <div class="sec-t">Наша <em>история</em></div>
+    <div class="story-grid">
+      <div class="story-text">
+        <p>Всё началось в небольшой мастерской в Бишкеке, где <strong>Айгуль Сатылган</strong> начала шить кожаные сумки для друзей. Без машинного производства, без шаблонов — только руки и идея, что настоящее качество живёт в деталях.</p>
+        <p>Постепенно слово о уникальных изделиях разошлось по городу. К 2021 году к проекту присоединились ещё семь мастеров, каждый со своей специализацией: гравировка, плетение, работа с серебром и кожей.</p>
+        <p>Сегодня <strong>Maison Artisan</strong> — это не просто магазин. Это пространство, где клиент может стать соавтором своего аксессуара: выбрать материал, цвет, форму, добавить имя или символ, важный именно ему.</p>
+        <div class="quote-strip">
+          <div class="q-text">"Мы не делаем вещи на поток. Мы делаем вещи, которые остаются с тобой навсегда."</div>
+          <div class="q-author">— Айгуль Сатылган, основатель</div>
+        </div>
+      </div>
+      <div class="story-img-col">
+        <div class="si1">
+          <div class="si-ph"><div class="si-box"></div><div class="si-lbl">Фото основателя</div></div>
+          <div class="pant" style="bottom:8px;left:8px;position:absolute;">
+            <div class="pant-sw" style="background:#6B3A2A;"></div>
+            <div class="pant-brand">PANTONE®</div>
+            <div class="pant-code">19-1233 TCX</div>
+            <div class="pant-name">Tiramisu</div>
+          </div>
+        </div>
+        <div class="si2">
+          <div class="si-ph"><div class="si-box"></div><div class="si-lbl">Первое изделие</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div class="values">
+    <div class="sec-tag">Принципы</div>
+    <div class="sec-t">Наши <em>ценности</em></div>
+    <div class="val-grid">
+      <div class="val-card">
+        <div class="val-num">01</div>
+        <div class="val-ic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M18 11V6a2 2 0 00-2-2v0a2 2 0 00-2 2v0"/><path d="M14 10V4a2 2 0 00-2-2v0a2 2 0 00-2 2v2"/><path d="M10 10.5V6a2 2 0 00-2-2v0a2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 114 0v6a8 8 0 01-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 012.83-2.82L7 15"/></svg>
+        </div>
+        <div class="val-t">Ручной труд</div>
+        <div class="val-s">Каждое изделие создаётся вручную без конвейера. Мы ценим время и усилия мастера в каждом стежке.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-num">02</div>
+        <div class="val-ic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="val-t">Честность</div>
+        <div class="val-s">Мы используем только натуральные материалы и честно рассказываем о процессе производства каждого товара.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-num">03</div>
+        <div class="val-ic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="val-t">Качество</div>
+        <div class="val-s">30-дневная гарантия на все изделия. Если что-то не так — мы бесплатно починим или заменим товар.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-num">04</div>
+        <div class="val-ic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="val-t">Персонализация</div>
+        <div class="val-s">Ты главный дизайнер своего аксессуара. Имя, цвет, материал — всё по твоему вкусу и желанию.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-num">05</div>
+        <div class="val-ic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="val-t">Сообщество</div>
+        <div class="val-s">Мы строим культуру вокруг ремесла. Наши клиенты — это люди, которые ценят подлинность и красоту.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-num">06</div>
+        <div class="val-ic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="1.5"><leaf/><path d="M2 22c1.25-.987 2.27-1.975 3.9-2.975M22 2S11 2 6 13c-.23.5-.45 1-.63 1.5"/><path d="M22 2c0 0-10 3-11 13"/><circle cx="16" cy="8" r="2"/></svg>
+        </div>
+        <div class="val-t">Экологичность</div>
+        <div class="val-s">Мы выбираем поставщиков кожи с сертификатами экологичного производства и минимизируем отходы в мастерской.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div class="team">
+    <div class="sec-tag">Люди</div>
+    <div class="sec-t">Наша <em>команда</em></div>
+    <div class="team-grid">
+      <div class="tm-card">
+        <div class="tm-photo t1">
+          <div class="tm-ava" style="background:#C8AA8A;color:#6B3A2A;">АС</div>
+          <div class="tm-badge">Основатель</div>
+        </div>
+        <div class="tm-info">
+          <div class="tm-name">Айгуль Сатылган</div>
+          <div class="tm-role">Главный мастер · Дизайнер</div>
+          <div class="tm-desc">Основала Maison Artisan в 2019. Специализируется на кожаных сумках и авторском дизайне.</div>
+        </div>
+      </div>
+      <div class="tm-card">
+        <div class="tm-photo t2">
+          <div class="tm-ava" style="background:#B09070;color:#F0EBE0;">МК</div>
+        </div>
+        <div class="tm-info">
+          <div class="tm-name">Максат Кадыров</div>
+          <div class="tm-role">Гравировщик · Ювелир</div>
+          <div class="tm-desc">10 лет опыта в ювелирном деле. Отвечает за персонализацию и гравировку изделий.</div>
+        </div>
+      </div>
+      <div class="tm-card">
+        <div class="tm-photo t3">
+          <div class="tm-ava" style="background:#D8C8A0;color:#5A3020;">ЗА</div>
+        </div>
+        <div class="tm-info">
+          <div class="tm-name">Зарина Акунова</div>
+          <div class="tm-role">Мастер плетения · Браслеты</div>
+          <div class="tm-desc">Создаёт браслеты и украшения методом макраме и плетения. Её работы — самые узнаваемые.</div>
+        </div>
+      </div>
+      <div class="tm-card">
+        <div class="tm-photo t4">
+          <div class="tm-ava" style="background:#C0A880;color:#4A2810;">КИ</div>
+        </div>
+        <div class="tm-info">
+          <div class="tm-name">Кирилл Иванов</div>
+          <div class="tm-role">Веб-разработчик · IT</div>
+          <div class="tm-desc">Разработал платформу магазина с конструктором персонализации. Django, React и MySQL.</div>
+        </div>
+      </div>
+      <div class="tm-card">
+        <div class="tm-photo t5">
+          <div class="tm-ava" style="background:#A09070;color:#F0EBE0;">НС</div>
+        </div>
+        <div class="tm-info">
+          <div class="tm-name">Нуржан Сыдыков</div>
+          <div class="tm-role">Мастер по коже · Ремни</div>
+          <div class="tm-desc">Специализируется на поясах и ремнях ручной работы. Использует итальянскую кожу растительного дубления.</div>
+        </div>
+      </div>
+      <div class="tm-card">
+        <div class="tm-photo t6">
+          <div class="tm-ava" style="background:#E0D0B0;color:#6B3A2A;">АБ</div>
+        </div>
+        <div class="tm-info">
+          <div class="tm-name">Анара Бекова</div>
+          <div class="tm-role">Менеджер · Клиентский сервис</div>
+          <div class="tm-desc">Отвечает за коммуникацию с клиентами и контроль качества всех заказов перед отправкой.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+    <div class="tl-header">
+      <div class="sec-tag">Путь</div>
+      <div class="sec-t">Как мы <em>развивались</em></div>
+    </div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-year">2019</div>
+        <div class="tl-dot active"></div>
+        <div class="tl-content">
+          <div class="tl-t">Основание мастерской</div>
+          <div class="tl-s">Айгуль открыла небольшую мастерскую в Бишкеке. Первые 20 сумок были проданы друзьям и знакомым за один месяц.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2020</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-t">Первый интернет-магазин</div>
+          <div class="tl-s">Запуск простого сайта с каталогом. За первый год онлайн-продаж — более 200 заказов из разных городов Кыргызстана.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-t">Расширение команды</div>
+          <div class="tl-s">К проекту присоединились ещё 5 мастеров. Появились новые категории: украшения, браслеты, гравировка на металле.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2022</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-t">Персонализация как фишка</div>
+          <div class="tl-s">Запуск конструктора изделий — первого в Кыргызстане визуального редактора для аксессуаров ручной работы.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2025</div>
+        <div class="tl-dot active"></div>
+        <div class="tl-content">
+          <div class="tl-t">Новая платформа · Дипломный проект</div>
+          <div class="tl-s">Полный редизайн платформы на Django с расширенным визуальным мерчем, мультиязычностью и обновлённым конструктором.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NUMBERS -->
+  <div class="nums">
+    <div class="sec-tag">Цифры</div>
+    <div class="sec-t">Maison Artisan <em>в числах</em></div>
+    <div class="nums-grid">
+      <div class="num-card"><div class="num-big">1 200<span class="num-unit">+</span></div><div class="num-lbl">Изделий создано</div></div>
+      <div class="num-card"><div class="num-big">98<span class="num-unit">%</span></div><div class="num-lbl">Довольных клиентов</div></div>
+      <div class="num-card"><div class="num-big">8</div><div class="num-lbl">Мастеров в команде</div></div>
+      <div class="num-card"><div class="num-big">3</div><div class="num-lbl">Языка интерфейса</div></div>
+    </div>
+  </div>
+
+  <!-- PRODUCTION -->
+  <div class="prod-sec">
+    <div class="sec-tag">Процесс</div>
+    <div class="sec-t">Как мы <em>работаем</em></div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-img pi1b">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 9H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5c0 .83-.67 1.5-1.5 1.5H3c-.83 0-1.5-.67-1.5-1.5S2.17 8 3 8h6.5c.83 0 1.5.67 1.5 1.5z"/><path d="M8.5 15H10v-1.5c0-.83-.67-1.5-1.5-1.5S7 12.67 7 13.5s.67 1.5 1.5 1.5z"/></svg>
+        </div>
+        <div class="prod-body">
+          <div class="prod-title">Выбор материалов</div>
+          <div class="prod-desc">Работаем только с проверенными поставщиками кожи из Италии и Турции. Каждая партия проходит контроль качества.</div>
+          <div class="prod-tag">Этап 1</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img pi2b">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="prod-body">
+          <div class="prod-title">Персонализация</div>
+          <div class="prod-desc">Клиент настраивает изделие в конструкторе: цвет, материал, гравировка. Мастер получает точное техническое задание.</div>
+          <div class="prod-tag">Этап 2</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img pi3b">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><path d="M18 11V6a2 2 0 00-2-2v0a2 2 0 00-2 2v0"/><path d="M14 10V4a2 2 0 00-2-2v0a2 2 0 00-2 2v2"/><path d="M10 10.5V6a2 2 0 00-2-2v0a2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 114 0v6a8 8 0 01-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 012.83-2.82L7 15"/></svg>
+        </div>
+        <div class="prod-body">
+          <div class="prod-title">Ручное изготовление</div>
+          <div class="prod-desc">Мастер создаёт изделие вручную. Среднее время производства — 2–5 рабочих дней в зависимости от сложности.</div>
+          <div class="prod-tag">Этап 3</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img pi4b">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6B3A2A" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="prod-body">
+          <div class="prod-title">Контроль и доставка</div>
+          <div class="prod-desc">Каждое изделие проходит финальную проверку. Упаковка в фирменную коробку и доставка по всему Кыргызстану.</div>
+          <div class="prod-tag">Этап 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="cta-tag">● Готов начать?</div>
+    <div class="cta-h">Создай <em>свой</em> аксессуар</div>
+    <div class="cta-sub">Перейди в конструктор, выбери изделие и персонализируй его — мы сделаем всё остальное с любовью.</div>
+    <div class="cta-btns">
+      <div class="bp">Открыть конструктор</div>
+      <div class="bo">Смотреть каталог</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="ftr">
+    <div class="fg">
+      <div>
+        <div class="fl">
+          <div class="logo-sq"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F0EBE0" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+          <span style="font-size:13px;font-weight:500;color:#C8AA8A;font-family:var(--font-serif);">Maison Artisan</span>
+        </div>
+        <div class="fd2">Брендовые аксессуары ручной работы с персонализацией. Каждое изделие уникально.</div>
+        <div class="soc">
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+          <div class="sb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8AA8A" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.95C18.88 4 12 4 12 4s-6.88 0-8.59.47a2.78 2.78 0 00-1.95 1.95A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.5C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></div>
+        </div>
+      </div>
+      <div><div class="fct">Каталог</div><span class="flnk">Сумки</span><span class="flnk">Кошельки</span><span class="flnk">Украшения</span><span class="flnk">Ремни</span></div>
+      <div><div class="fct">Помощь</div><span class="flnk">Доставка</span><span class="flnk">Возврат</span><span class="flnk">Оплата</span><span class="flnk">FAQ</span></div>
+      <div><div class="fct">Компания</div><span class="flnk">О нас</span><span class="flnk">Мастера</span><span class="flnk">Блог</span><span class="flnk">Контакты</span></div>
+    </div>
+    <div class="fbot">
+      <div class="fcp">© 2025 Maison Artisan. Все права защищены.</div>
+      <div class="fls"><span class="flb on">RU</span><span class="flb">EN</span><span class="flb">KG</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

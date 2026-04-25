@@ -1,0 +1,559 @@
+# Russian translations for Maison Artisan.
+msgid ""
+msgstr ""
+"Project-Id-Version: Maison Artisan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-26 00:31+0600\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Kyrgyz"
+msgstr "Кыргызча"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "English"
+msgstr "English"
+
+msgid "About"
+msgstr "О нас"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Our workshop"
+msgstr "Наша мастерская"
+
+msgid "Handmade accessories with care for detail"
+msgstr "Аксессуары ручной работы с вниманием к деталям"
+
+msgid ""
+"Maison Artisan is a small team in Bishkek. We work with leather and metal, "
+"offer personalization, and ship across Kyrgyzstan."
+msgstr ""
+"Maison Artisan — небольшая команда в Бишкеке. Мы работаем с кожей и "
+"металлом, предлагаем персонализацию и доставляем заказы по Кыргызстану."
+
+msgid "Values"
+msgstr "Ценности"
+
+msgid "Handwork"
+msgstr "Ручной труд"
+
+msgid ""
+"Each piece is assembled and finished by hand — no mass production lines."
+msgstr ""
+"Каждое изделие собирается и доводится вручную — без конвейерного "
+"производства."
+
+msgid "Quality"
+msgstr "Качество"
+
+msgid ""
+"We check materials and every order before shipping. We are honest about "
+"timing and care."
+msgstr ""
+"Проверяем материалы и каждый заказ перед отправкой. Честно сообщаем сроки и "
+"заботимся о результате."
+
+msgid "Personalization"
+msgstr "Персонализация"
+
+msgid ""
+"Choose color, engraving, and details where the product allows — we guide you "
+"through the process."
+msgstr ""
+"Выберите цвет, гравировку и детали там, где это предусмотрено товаром — мы "
+"проведём вас по шагам."
+
+msgid "Browse catalog"
+msgstr "Смотреть каталог"
+
+msgid "Contact us"
+msgstr "Связаться с нами"
+
+msgid "Account"
+msgstr "Профиль"
+
+msgid "My account"
+msgstr "Личный кабинет"
+
+msgid ""
+"This section is under construction. You can place orders via the cart and "
+"checkout without signing in."
+msgstr ""
+"Раздел в разработке. Заказы можно оформить через корзину и оформление заказа "
+"без регистрации."
+
+msgid "Cart"
+msgstr "Корзина"
+
+msgid "Catalog"
+msgstr "Каталог"
+
+msgid "Contacts"
+msgstr "Контакты"
+
+msgid "Clear cart"
+msgstr "Очистить корзину"
+
+msgid "Back to catalog"
+msgstr "Вернуться в каталог"
+
+msgid "KGS"
+msgstr "сом"
+
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "Order total"
+msgstr "Итого к оплате"
+
+msgid "Items"
+msgstr "Товаров"
+
+msgid "Total"
+msgstr "Сумма"
+
+msgid "Checkout"
+msgstr "Оформление заказа"
+
+msgid "Your cart is empty"
+msgstr "Корзина пока пустая"
+
+msgid "Full assortment"
+msgstr "Весь ассортимент"
+
+msgid "of products"
+msgstr "товаров"
+
+#, python-format
+msgid "%(n)s handmade pieces · Personalization on everything"
+msgstr "%(n)s изделий ручной работы · Персонализация на всё"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "All products"
+msgstr "Все товары"
+
+msgid "Price (KGS)"
+msgstr "Цена (сом)"
+
+msgid "From"
+msgstr "От"
+
+msgid "To"
+msgstr "До"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "Color"
+msgstr "Цвет"
+
+msgid "Selected colors"
+msgstr "Выбранные цвета"
+
+msgid "Material"
+msgstr "Материал"
+
+msgid "Options"
+msgstr "Опции"
+
+msgid "Engraving"
+msgstr "Гравировка"
+
+msgid "Gift packaging"
+msgstr "Подарочная упаковка"
+
+msgid "Hits only"
+msgstr "Только хиты"
+
+msgid "Reset filters"
+msgstr "Сбросить фильтры"
+
+msgid "Found"
+msgstr "Найдено"
+
+msgid "product(s)"
+msgstr "товара(ов)"
+
+msgid "No filters"
+msgstr "Без фильтров"
+
+msgid "Search by name"
+msgstr "Поиск по названию"
+
+msgid "Sort: popularity"
+msgstr "По популярности"
+
+msgid "Sort: price low"
+msgstr "Сначала дешевле"
+
+msgid "Sort: price high"
+msgstr "Сначала дороже"
+
+msgid "Sort: newest"
+msgstr "Новинки"
+
+msgid "Sort: rating"
+msgstr "По рейтингу"
+
+msgid "Search"
+msgstr "Найти"
+
+msgid "Photo"
+msgstr "Фото"
+
+msgid "HIT"
+msgstr "ХИТ"
+
+msgid "NEW"
+msgstr "НОВИНКА"
+
+msgid "SALE"
+msgstr "СКИДКА"
+
+msgid "Material to be confirmed"
+msgstr "Материал уточняется"
+
+msgid "Details"
+msgstr "Подробнее"
+
+msgid "Add to cart"
+msgstr "В корзину"
+
+msgid "No products in the catalog yet"
+msgstr "Пока нет товаров в каталоге"
+
+msgid "Add products in the admin: /admin"
+msgstr "Добавьте товары в админке: /admin"
+
+#, python-format
+msgid "Page %(num)s of %(total)s"
+msgstr "Страница %(num)s из %(total)s"
+
+msgid "Back to cart"
+msgstr "Назад в корзину"
+
+msgid "pcs."
+msgstr "шт."
+
+msgid "Customer details"
+msgstr "Данные покупателя"
+
+msgid "Full name"
+msgstr "ФИО"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Delivery address"
+msgstr "Адрес доставки"
+
+msgid "Order comment"
+msgstr "Комментарий к заказу"
+
+msgid "Confirm order"
+msgstr "Подтвердить заказ"
+
+msgid "Cart is empty — nothing to checkout."
+msgstr "Корзина пустая, оформлять нечего."
+
+msgid "Order placed"
+msgstr "Заказ оформлен"
+
+msgid "Thank you! Your order has been received."
+msgstr "Спасибо! Заказ принят."
+
+msgid "We will contact you to confirm."
+msgstr "Мы свяжемся с вами для подтверждения."
+
+msgid "We are always in touch"
+msgstr "Мы всегда на связи"
+
+msgid "Reach out"
+msgstr "Свяжитесь"
+
+msgid "to us"
+msgstr "с нами"
+
+msgid ""
+"Questions about an order, personalization, or getting to know our workshop — "
+"write, call, or visit."
+msgstr ""
+"Есть вопрос по заказу, хотите оформить персонализацию или просто хотите "
+"познакомиться с нашей мастерской — пишите, звоните, приходите."
+
+msgid "Mon–Sat, 10:00–19:00"
+msgstr "Пн–Сб, 10:00–19:00"
+
+msgid "We reply within one business day"
+msgstr "Ответим в течение дня"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Write to us"
+msgstr "Написать нам"
+
+msgid "Feedback form line1"
+msgstr "Форма"
+
+msgid "Feedback form emphasis"
+msgstr "обратной связи"
+
+msgid "Maison Artisan — handmade accessories"
+msgstr "Maison Artisan — аксессуары ручной работы"
+
+msgid "Handmade · Premium quality"
+msgstr "Ручная работа · Премиум качество"
+
+msgid "Accessories,"
+msgstr "Аксессуары,"
+
+msgid "crafted"
+msgstr "созданные"
+
+msgid "with soul"
+msgstr "с душой"
+
+msgid "Every piece tells a story."
+msgstr "Каждое изделие — отдельная история."
+
+msgid "Personalize, choose, get inspired."
+msgstr "Персонализируй, выбирай, вдохновляй."
+
+msgid "Create your own"
+msgstr "Создать свой"
+
+msgid "Product photo"
+msgstr "Фото товара"
+
+msgid "Handmade"
+msgstr "Ручная работа"
+
+msgid "Every piece is unique"
+msgstr "Каждое изделие уникально"
+
+msgid "Name, color, material"
+msgstr "Имя, цвет, материал"
+
+msgid "Fast delivery"
+msgstr "Быстрая доставка"
+
+msgid "Across the country"
+msgstr "По всей стране"
+
+msgid "Quality guarantee"
+msgstr "Гарантия качества"
+
+msgid "30-day returns"
+msgstr "30 дней на возврат"
+
+msgid "Assortment"
+msgstr "Ассортимент"
+
+msgid "Categories heading"
+msgstr "Категории"
+
+msgid "of goods"
+msgstr "товаров"
+
+msgid "All categories"
+msgstr "Все категории"
+
+msgid "models"
+msgstr "моделей"
+
+msgid "Open products"
+msgstr "Открыть товары"
+
+msgid "Popular"
+msgstr "Популярное"
+
+msgid "Our"
+msgstr "Наши"
+
+msgid "hits"
+msgstr "хиты"
+
+msgid "See all"
+msgstr "Смотреть все"
+
+msgid "Bestsellers"
+msgstr "Хиты продаж"
+
+msgid "New arrivals"
+msgstr "Новинки"
+
+msgid "Promotions"
+msgstr "Акции"
+
+msgid "View"
+msgstr "Смотреть"
+
+msgid "Unique feature"
+msgstr "Уникальная фишка"
+
+msgid "Create"
+msgstr "Создай"
+
+msgid "your own"
+msgstr "свой"
+
+msgid "accessory"
+msgstr "аксессуар"
+
+msgid "Personalize color, material, and engraving — right on the site."
+msgstr "Персонализируй цвет, материал, гравировку — прямо на сайте."
+
+msgid "Color and material choice"
+msgstr "Выбор цвета и материала"
+
+msgid "Add name or initials"
+msgstr "Добавление имени / инициалов"
+
+msgid "Preview before checkout"
+msgstr "Превью до оформления заказа"
+
+msgid "Open builder"
+msgstr "Открыть конструктор"
+
+msgid "Builder"
+msgstr "Конструктор"
+
+msgid "Pick a color:"
+msgstr "Выбери цвет:"
+
+msgid "Simple and fast"
+msgstr "Просто и быстро"
+
+msgid "How it"
+msgstr "Как это"
+
+msgid "works"
+msgstr "работает"
+
+msgid "Pick a product"
+msgstr "Выбери товар"
+
+msgid "Browse the catalog and find the right accessory."
+msgstr "Просмотри каталог и найди подходящий аксессуар."
+
+msgid "Make it yours"
+msgstr "Настрой под себя"
+
+msgid "Choose color and material, add engraving."
+msgstr "Выбери цвет, материал, добавь гравировку."
+
+msgid "Receive your order"
+msgstr "Получи заказ"
+
+msgid "Place an order and get a one-of-a-kind piece."
+msgstr "Оформи заказ и получи уникальное изделие."
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Handmade accessories with personalization. Every piece is unique."
+msgstr ""
+"Брендовые аксессуары ручной работы с персонализацией. Каждое изделие "
+"уникально."
+
+msgid "Bags"
+msgstr "Сумки"
+
+msgid "Wallets"
+msgstr "Кошельки"
+
+msgid "Jewelry"
+msgstr "Украшения"
+
+msgid "Belts"
+msgstr "Ремни"
+
+msgid "Help"
+msgstr "Помощь"
+
+msgid "Delivery"
+msgstr "Доставка"
+
+msgid "Returns"
+msgstr "Возврат"
+
+msgid "Payment"
+msgstr "Оплата"
+
+msgid "Company"
+msgstr "Компания"
+
+msgid "Craftsmen"
+msgstr "Мастера"
+
+msgid "Blog"
+msgstr "Блог"
+
+msgid "© 2025 Maison Artisan. All rights reserved."
+msgstr "© 2025 Maison Artisan. Все права защищены."
+
+msgid "Main navigation"
+msgstr "Основная навигация"
+
+msgid ""
+"Description will appear soon. The item is already available for "
+"personalization and order."
+msgstr ""
+"Описание скоро появится. Товар уже доступен для персонализации и заказа."
+
+msgid "Reviews"
+msgstr "Отзывов"
+
+msgid "Product color"
+msgstr "Цвет товара"
+
+msgid "Related products"
+msgstr "Похожие товары"
+
+msgid "No related products yet."
+msgstr "Пока нет похожих товаров."
+
+#, python-format
+msgid "Category: %(name)s"
+msgstr "Категория: %(name)s"
+
+#, python-format
+msgid "Min price: %(value)s"
+msgstr "Цена от: %(value)s"
+
+#, python-format
+msgid "Max price: %(value)s"
+msgstr "Цена до: %(value)s"
+
+#, python-format
+msgid "Material: %(name)s"
+msgstr "Материал: %(name)s"
+
+#, python-format
+msgid "Color: %(name)s"
+msgstr "Цвет: %(name)s"
+
+msgid "Go to cart"
+msgstr "В корзину"
+
+msgid "Continue shopping"
+msgstr "Продолжить покупки"
+
+#, python-format
+msgid "Fitting: %(name)s"
+msgstr "Фурнитура: %(name)s"
+
+#, python-format
+msgid "Engraving: %(text)s"
+msgstr "Гравировка: %(text)s"
+
