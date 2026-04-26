@@ -40,8 +40,8 @@ msgid "Handmade accessories with care for detail"
 msgstr ""
 
 msgid ""
-"Maison Artisan is a small team in Bishkek. We work with leather and metal, "
-"offer personalization, and ship across Kyrgyzstan."
+"Marsovna is a small team in Bishkek. We work with leather and metal, offer "
+"personalization, and ship across Kyrgyzstan."
 msgstr ""
 
 msgid "Values"
@@ -304,7 +304,7 @@ msgstr ""
 msgid "Feedback form emphasis"
 msgstr ""
 
-msgid "Maison Artisan — handmade accessories"
+msgid "Marsovna — handmade accessories"
 msgstr ""
 
 msgid "Handmade · Premium quality"
@@ -493,7 +493,7 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-msgid "© 2025 Maison Artisan. All rights reserved."
+msgid "© 2025 Marsovna. All rights reserved."
 msgstr ""
 
 msgid "Main navigation"
